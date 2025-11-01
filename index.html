@@ -1,0 +1,3898 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>📜 Rede Mafiosa — Servidor RPG</title>
+<style>
+body {
+    margin: 0;
+    background-color: #000;
+    color: #8aff8a;
+    font-family: 'Poppins', sans-serif;
+    user-select: none;
+
+    background-image: url("https://i.imgur.com/uNFv5iT.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Glow neon */
+:root {
+    --neon-green: #00ff9c;
+    --neon-dark: #003b24;
+}
+
+/* Header */
+header {
+    background: #000;
+    text-align: center;
+    padding: 25px;
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--neon-green);
+    text-shadow: 0 0 12px var(--neon-green), 0 0 25px var(--neon-green);
+    border-bottom: 2px solid var(--neon-green);
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    justify-content: center;
+    background-color: #070707cc;
+    border-bottom: 1px solid var(--neon-green);
+}
+
+.tab, .dropdown {
+    padding: 7px 34px;
+    cursor: pointer;
+    color: var(--neon-green);
+    font-weight: 100;
+    border-radius: 20px 20px 0 0;
+	 font-family: 'Poppins', verdana; /* Fonte das abas */
+    margin-right: 11px;
+    position: relative;
+    transition: 0.25s;
+    text-shadow: 0 0 8px var(--neon-green);
+}
+
+
+.tab:hover, .dropdown:hover {
+    background-color: #222;
+}
+
+.tab.active, .dropdown.active {
+    background-color: #808080;
+    color: #0d0d0d;
+}
+
+/* Dropdown */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #1a1a1a;
+    min-width: 230px;
+    box-shadow: 0 0 10px #000;
+    border: 1px solid #4CAF50;
+    border-radius: 6px;
+    z-index: 10;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: #00ff9c; /* verde */
+    padding: 5px 10px;
+    display: block;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    background-color: #00ff9c;
+    color: #000000;
+}
+/* Conteúdo */
+.content {
+    padding: 25px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+}
+
+/* Estilo das regras */
+/* Estilo atualizado das regras */
+.regra {
+    background-color: #1a1a1a;       /* fundo escuro */
+    border: 1px solid #333;          /* borda discreta, pode ser transparente se quiser */
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px #000;
+}
+
+/* Títulos das regras */
+.regra h2 {
+    color: #ff0000; /* vermelho */
+    font-size: 20px; /* tamanho uniforme */
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Texto normal das regras e listas ...nelson cores do texto */
+.regra p,
+.regra ul,
+.regra li {
+    color: #808080; /* cinza */
+    font-size: 13px; /* tamanho uniforme para o texto */
+    line-height: 1.5em;
+}
+
+/* Subtítulos, se houver (Exemplos, Punição, Observação) */
+.regra h3 {
+    color: #ff0000; /* vermelho */
+    font-size: 18px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Itens da lista (opcional) */
+.regra ul li {
+    margin-bottom: 5px;
+}
+
+/* Punições (opcional, vermelho destacado) */
+.punicao {
+    color: #ff4444; /* vermelho levemente diferente */
+    font-weight: bold;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+    color: #fff; /* cor da letra */
+    background-color: #808080; /* cor do fundo */
+    border-top: 1px solid #00ff00; /* borda superior */
+    font-size: 14px;
+    z-index: 1000; /* garante que fique acima de outros elementos */
+
+}
+    body {
+      background-image: url("https://i.imgur.com/uNFv5iT.gif"); /* link da imagem */
+      background-size: cover;       /* cobre toda a tela */
+      background-repeat: no-repeat; /* não repete a imagem */
+      background-position: center;  /* centraliza a imagem */
+      background-attachment: fixed; /* mantém fixa ao rolar a página */
+      font-family: Arial, sans-serif; /* exemplo de fonte */
+	  
+    }
+
+    /* Opcional: deixa o conteúdo legível sobre o fundo */
+    .conteudo {
+      background-color: rgba(255, 255, 255, 0.85); /* leve transparência branca */
+      padding: 20px;
+      border-radius: 10px;
+    }
+	.regra {
+      color: #808080;
+    } /* menu fixo*/
+	
+  </style>
+</head>
+
+ 
+<footer>Copyright © 2025 Rede Mafiosa — Todos os direitos reservados | *Servidor Fundado por Mickey*</footer>
+  </div>
+    </div>
+<header>
+  ™️ <span style="color: black;">Grand Theft Auto San Andreas</span> ™️
+</header>
+
+<div class="tabs">
+  <div class="tab active" data-tab="bem-vindo">Bem Vindo</div>
+  <div class="dropdown" id="tab-regras-gerais">📂 Regras Gerais ▾
+    <div class="dropdown-content">
+      <a href="#" data-target="regras-servidor">📜 Regras Servidor</a>
+      <a href="#" data-target="regras-staff">🛡️ Regras Staff</a>  
+      <a href="#" data-target="regras-denuncias">📢 Regras Denúncias</a>
+      <a href="#" data-target="regras-chat">💬 Regras Chat</a>
+      <a href="#" data-target="regras-lider">👑 Regras Líder</a>
+      <a href="#" data-target="regras-familias">🏠 Regras Famílias</a>
+      <a href="#" data-target="regras-android">📱 Regras Android</a>
+      <a href="#" data-target="regras-objetos">🧱 Regras Objetos</a>
+    </div>
+  </div>
+ <div class="dropdown" id="tab-outras-regras">🤹🏻‍♀️ Outras Regras ▾
+  <div class="dropdown-content">
+   <a href="#" data-target="orgaos-assalto">📑 Regras de Assalto</a>
+    <a href="#" data-target="orgaos-sequestro">📑 Regras de Sequestro</a>
+    <a href="#" data-target="orgaos-terroristas">📑 Regras de Terroristas</a>
+    <a href="#" data-target="orgaos-assasinas">📑 Regras de Assasinas</a>
+    <a href="#" data-target="orgaos-criminosas">📑 Regras de Criminosas</a>
+   <a href="#" data-target="orgaos-emboscada">📑 Regras de Emboscada</a>
+   <a href="#" data-target="orgaos-reporters">📑 Regras de Reporters</a>
+   <a href="#" data-target="orgaos-govermentais">📑 Regras Govermentais</a>
+  </div>
+</div>
+</div>
+
+<div class="content">
+  <div class="tab-content active" id="content-bem-vindo">
+    <div style="text-align: center;">
+  <h2 style="color: #000000; background-color: #e0e0e0; border: 2px solid #000000; padding: 10px 20px; border-radius: 8px; display: inline-block;">
+    Bem-vindo(a) à Rede Mafiosa
+   
+  </h2>
+</div>
+
+ <div style="
+  background-color: #2E8B57; 
+  border: 2px solid #000000; 
+  border-radius: 10px; 
+  padding: 25px; 
+  max-width: 700px; 
+  margin: 20px auto; 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+  color: #222;
+  line-height: 1.6;
+">
+
+
+
+<div style="text-align: center; margin-bottom: 10px;">
+  <img src="https://i.imgur.com/dALdMHC.gif" 
+       alt="emoji esticado" 
+       style="height:50px; width:700px;">
+</div>
+
+
+
+  <h1 style="text-align: center;"> Aqui você encontra informações e apoio para seu desenvolvimento em nosso servidor</h1>
+  <p style="text-align: center; font-style: NEGRITO; color: #000000;">
+    "O respeito se conquista. O poder se mantém."
+  </p>
+
+  <p>🕶️ A Família está crescendo... e agora você faz parte dela!</p>
+
+  <p>
+    Aqui na <strong>Rede Mafiosa</strong>, a lealdade vale mais do que ouro, e quem prova seu valor sobe na hierarquia.
+    Prepare-se para entrar em um mundo de <strong>poder, estratégia e respeito</strong>.
+  </p>
+
+  <h4>⚙️ O que você vai encontrar aqui:</h4>
+  <ul>
+    <li>💬 Comunidade ativa e acolhedora</li>
+    <li>🎮 Eventos, jogos e competições</li>
+    <li>💰 Sistema de economia e cargos exclusivos</li>
+    <li>🔫 Missões, guerras e desafios entre famílias</li>
+    <li>🎁 Sorteios e recompensas semanais</li>
+    <li>🎙️ Canais de voz sempre movimentados</li>
+  </ul>
+
+  <h4>👑 Nosso lema:</h4>
+  <p style="font-style: italic; text-align: center;">
+    "Família acima de tudo. Traição, nunca."
+  </p>
+
+  <p>
+    🧨 Entre, alie-se e prove seu valor.<br>
+    📜 Leia as regras todas nossas regras</a>.<br>
+    💎 E ganhe seu primeiro cargo da máfia!
+  </p>
+   <p style="text-align: center; margin-top: 20px;">
+  <strong>A equipe RedeMafiosa busca sempre trazer a qualidade máxima no entretenimento de nossos jogadores, nossa equipe é focada em garantir o aproveitamento máximo de nossos queridos players. Estamos sempre disponíveis para esclarecer duvidas e oferecer o melhor tipo de suporte no que você precisar.<strong>
+  
+  <p style="text-align: center; margin-top: 20px;">
+  🔗 <strong>SERVER IP: 88.198.129.10:7777</strong>
+  </p>
+<p style="text-align: center; margin-top: 20px;">
+  🔗 <strong>Convite oficial Discord:</strong> 
+  <a href="https://discord.gg/ENfShxcS" target="_blank" rel="noopener noreferrer">
+    Clique aqui para entrar na Rede Mafiosa
+  </a>
+</p>
+</div>
+</div>
+
+  <div class="tab-content" id="content-regras-gerais">
+    <div id="regras-servidor" class="section active">
+
+  <div class="regra">
+    <h2>01. ANT-RPG</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Não é permitido realizar ações que não seriam cometidas na vida real, por serem irracionais, abusivas ou que quebram a imersão do jogo.</p>
+    <h3>Exemplos:</h3>
+    <ul>
+      <li>Reagir sozinho contra 3 policiais ou sequestradores a pé.</li>
+      <li>Reagir sozinho contra 2 assaltantes a pé.</li>
+      <li>Cometer suicídio para evitar uma situação no jogo.</li>
+      <li>Pedir para ser morto.</li>
+    </ul>
+    <h3>Punição:</h3>
+    <ul>
+      <li>Veterano: 200 minutos no carandiru + aviso.</li>
+      <li>Novato: 100 minutos no carandiru.</li>
+    </ul>
+    <p>Observação: A equipe administrativa irá avaliar o contexto para definir se a ação foi ANT-RPG.</p>
+  </div>
+
+  <hr>
+
+  <div class="regra">
+    <h2>02. ANT-JOGO</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Ações que comprometem a ética, lógica e conduta esperada no servidor.</p>
+    <h3>Exemplos:</h3>
+    <ul>
+      <li>Policial fornecer drogas para depois revistar.</li>
+      <li>Hitmans ou Assassins usando /esc para cumprir contrato em jogador fora de esc.</li>
+    </ul>
+    <h3>Punição:</h3>
+    <ul>
+      <li>Veterano: 150 minutos no carandiru.</li>
+      <li>Novato: 60 minutos no carandiru.</li>
+    </ul>
+    <p>Observação: Cada caso será avaliado individualmente pela administração.</p>
+  </div>
+
+  <hr>
+
+  <div class="regra">
+    <h2>03. DEATHMATCH (DM)</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Proibido matar, atirar ou agredir sem motivo válido no contexto RPG.</p>
+    <h3>Exceções:</h3>
+    <ul>
+      <li>Organização matando civil em seu território.</li>
+      <li>Funcionário de fazenda abatendo ladrão tentando explodir o cofre.</li>
+    </ul>
+    <h3>Exemplos:</h3>
+    <ul>
+      <li>Atirar sem interação prévia.</li>
+      <li>Matar membro da própria organização.</li>
+      <li>Atirar no veículo de outro jogador.</li>
+    </ul>
+    <h3>Punição:</h3>
+    <ul>
+      <li>Veterano: 150 minutos no carandiru.</li>
+      <li>Novato: 60 minutos no carandiru.</li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <div class="regra">
+    <h2>04. RUN-OVER</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Proibido atropelar ou deixar veículo em cima de alguém de forma intencional.</p>
+    <h3>Exemplos:</h3>
+    <ul>
+      <li>Atropelar repetidamente para causar dano.</li>
+      <li>Estacionar em cima de jogador para impedir movimentação.</li>
+    </ul>
+    <h3>Punição:</h3>
+    <ul>
+      <li>Veterano: 150 minutos no carandiru.</li>
+      <li>Novato: 60 minutos no carandiru.</li>
+    </ul>
+    <p>Observação: Atropelamentos durante perseguições devem seguir a coerência RPG.</p>
+  </div>
+
+  <hr>
+
+  <div class="regra">
+    <h2>05. EQUIPAMENTO EM BATALHA</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Proibido usar /kitsocio ou consumir itens durante combate.</p>
+    <h3>Exemplos:</h3>
+    <ul>
+      <li>Usar /kitsocio para curar ou pegar munição em tiroteio.</li>
+      <li>Consumir drogas ou medkit durante confronto.</li>
+    </ul>
+    <h3>Punição:</h3>
+    <ul>
+      <li>Veterano: 100 minutos no carandiru.</li>
+      <li>Novato: 60 minutos no carandiru.</li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <div class="regra">
+    <h2>06. /JETPACK EM BATALHA</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Proibido usar /jetpack em combate ou após receber voz de prisão.</p>
+    <h3>Exemplos:</h3>
+    <ul>
+      <li>Fugir com /jetpack após voz de prisão.</li>
+    </ul>
+    <h3>Punição:</h3>
+    <ul>
+      <li>Veterano: 100 minutos no carandiru.</li>
+      <li>Novato: 60 minutos no carandiru.</li>
+    </ul>
+    <p>Observação: O uso do /jetpack deve ser apenas para situações coerentes, nunca para obter vantagem.</p>
+  </div>
+
+  <hr>
+ <!-- 07. ÁREA NEUTRA -->
+  <div class="regra">
+    <h2>07. ÁREA NEUTRA</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Proibido agredir, atirar ou matar em áreas neutras, salvo exceções.</p>
+    <h3>Exceções:</h3>
+    <ul>
+      <li>Policiais podem agir contra procurados.</li>
+      <li>Assassinos podem cumprir contratos.</li>
+    </ul>
+    <h3>Áreas Neutras (marcação azul):</h3>
+    <ul>
+      <li>Prefeitura</li>
+      <li>Spawn Civil</li>
+      <li>Arena de Duelos</li>
+      <li>Penitenciária</li>
+      <li>Caixinha Premium</li>
+    </ul>
+    <h3>Punição:</h3>
+    <ul>
+      <li>Veterano: 200 minutos no carandiru.</li>
+      <li>Novato: 60 minutos no carandiru.</li>
+    </ul>
+    <p>Observação: Essas áreas são zonas seguras e devem ser respeitadas. Ações excepcionais devem ter provas.</p>
+  </div>
+
+  <hr>
+
+  <!-- 08. ABUSO DE BUG -->
+  <div class="regra">
+    <h2>08. ABUSO DE BUG</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Proibido explorar ou se beneficiar de bugs. É obrigatório reportar.</p>
+    <h3>Exemplos:</h3>
+    <ul>
+      <li>Atravessar paredes.</li>
+      <li>Usar objetos bugados para flutuar ou travar veículos.</li>
+    </ul>
+    <h3>Punição:</h3>
+    <ul>
+      <li>Veterano: 100 minutos no carandiru.</li>
+      <li>Novato: 60 minutos no carandiru.</li>
+    </ul>
+    <p>Observação: Reportes responsáveis podem ser recompensados pela administração.</p>
+  </div>
+
+  <hr>
+
+  <!-- 09. CONTA FAKE / COMPARTILHAMENTO / OLD -->
+  <div class="regra">
+    <h2>09. CONTA FAKE / COMPARTILHAMENTO / OLD</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Proibido criar contas fakes, compartilhar contas ou criar contas após banimento (OLD).</p>
+    <h3>Exemplos:</h3>
+    <ul>
+      <li>Compartilhar sua conta com outra pessoa.</li>
+      <li>Usar a conta de outro jogador.</li>
+      <li>Criar nova conta após ser banido.</li>
+    </ul>
+    <h3>Punições:</h3>
+    <ul>
+      <li>Conta Fake: Banimento permanente da conta fake.</li>
+      <li>OLD: Banimento permanente da conta fake.</li>
+    </ul>
+    <p>Observação: A segurança da conta é responsabilidade do jogador. Não compartilhe suas credenciais.</p>
+  </div>
+
+  <hr>
+
+  <!-- 10. USO DE JOYPAD (PC) -->
+  <div class="regra">
+    <h2>10. USO DE JOYPAD (PC)</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Proibido utilizar o modo joypad no servidor.</p>
+    <h3>Punição:</h3>
+    <ul>
+      <li>Veterano: 100 minutos no carandiru.</li>
+      <li>Novato: 60 minutos no carandiru.</li>
+    </ul>
+    <p>Observação: O uso do joypad oferece vantagens injustas. A administração pode detectar seu uso.</p>
+  </div>
+
+  <hr>
+
+  <!-- 11. UNIÃO DE ORGANIZAÇÕES RIVAIS -->
+  <div class="regra">
+    <h2>11. UNIÃO DE ORGANIZAÇÕES RIVAIS</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Proibido formar alianças entre organizações rivais para obter vantagem.</p>
+    <h3>Exemplos:</h3>
+    <ul>
+      <li>Gangues rivais lutando juntas.</li>
+      <li>Acordos de não agressão entre grupos criminosos.</li>
+    </ul>
+    <h3>Punição:</h3>
+    <ul>
+      <li>Veterano: 60 minutos no carandiru.</li>
+      <li>Novato: 30 minutos no carandiru.</li>
+    </ul>
+    <p>Observação: Organizações devem manter sua rivalidade e integridade conforme o RPG.</p>
+  </div>
+
+  <hr>
+
+  <!-- 12. ABUSO DE COMANDOS -->
+  <div class="regra">
+    <h2>12. ABUSO DE COMANDOS</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Proibido usar comandos de forma abusiva para obter vantagens ou prejudicar outros.</p>
+    <h3>Exemplos:</h3>
+    <ul>
+      <li>Qualquer uso de comando que interfira negativamente na jogabilidade ou desequilibre o servidor.</li>
+    </ul>
+    <h3>Punição:</h3>
+    <ul>
+      <li>Veterano: 100 minutos no carandiru.</li>
+      <li>Novato: 60 minutos no carandiru.</li>
+    </ul>
+    <p>Observação: Organizações e seus líderes devem respeitar o bom uso dos comandos, mantendo o equilíbrio RPG.</p>
+  </div>
+
+  <hr>
+
+  <!-- 13. /Q EM COMBATE -->
+  <div class="regra">
+    <h2>13. /Q EM COMBATE</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Proibido usar /q (desconectar) durante confrontos ou situações de risco.</p>
+    <h3>Exemplos:</h3>
+    <ul>
+      <li>Sair do jogo para evitar assalto, sequestro, prisão ou contrato.</li>
+    </ul>
+    <h3>Punição:</h3>
+    <ul>
+      <li>Veterano: 150 minutos no carandiru.</li>
+      <li>Novato: 60 minutos no carandiru.</li>
+    </ul>
+    <p>Observação: Em caso de crash, o jogador deve retornar e se render ou resolver a situação. Provas do crash são recomendadas.</p>
+  </div>
+
+  <hr>
+
+  <!-- 14. ENGANAÇÃO DE JOGADORES -->
+  <div class="regra">
+    <h2>14. ENGANAÇÃO DE JOGADORES</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Proibido enganar outros jogadores com comandos ou promessas falsas.</p>
+    <h3>Exemplos:</h3>
+    <ul>
+      <li>Induzir alguém a usar /q prometendo prêmios.</li>
+      <li>Oferecer recompensas falsas por ações que prejudiquem o jogador.</li>
+    </ul>
+    <h3>Punição:</h3>
+    <ul>
+      <li>Veterano: 150 minutos no carandiru.</li>
+      <li>Novato: 60 minutos no carandiru.</li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <!-- 15. CALOTE -->
+  <div class="regra">
+    <h2>15. CALOTE</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Proibido não cumprir acordos comerciais ou transações entre jogadores.</p>
+    <h3>Punição:</h3>
+    <ul>
+      <li>Banimento 1 mês.</li>
+    </ul>
+    <p>Observação: Mantenha provas das transações (prints). A administração pode verificar logs e tomará as medidas cabíveis.</p>
+  </div>
+
+  <hr>
+    <!-- 16. SPAWN KILL -->
+  <div class="regra">
+    <h2>16. SPAWN KILL</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Proibido matar jogadores que acabaram de nascer ou reaparecer no spawn.</p>
+    <h3>Exemplos:</h3>
+    <ul>
+      <li>Ficar em locais de spawn só para matar quem renasce.</li>
+    </ul>
+    <h3>Punição:</h3>
+    <ul>
+      <li>Veterano: 100 minutos no carandiru.</li>
+      <li>Novato: 60 minutos no carandiru.</li>
+    </ul>
+    <p>Observação: Dê tempo e espaço para que jogadores saiam da área de spawn antes de qualquer combate.</p>
+  </div>
+
+  <hr>
+
+  <!-- 17. OFENSAS E DISCRIMINAÇÃO -->
+  <div class="regra">
+    <h2>17. OFENSAS E DISCRIMINAÇÃO</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Proibido dirigir ofensas pessoais ou praticar qualquer forma de discriminação, como racismo, homofobia ou xenofobia.</p>
+    <h3>Exemplos:</h3>
+    <ul>
+      <li>Palavras ou comportamentos ofensivos em relação à raça, cor, gênero, orientação sexual, origem etc.</li>
+      <li>Comentários discriminatórios via chat, voz, ou mensagens privadas.</li>
+    </ul>
+    <h3>Punições:</h3>
+    <ul>
+      <li>Ofensa: 150 minutos no carandiru.</li>
+      <li>Racismo/Homofobia/Xenofobia: Banimento permanente.</li>
+    </ul>
+    <p>Observação: Respeito é um pilar fundamental da comunidade. Violações graves são tratadas com total severidade.</p>
+  </div>
+
+  <hr>
+
+  <!-- 18. AVIÕES EM ÁREA NEUTRA -->
+  <div class="regra">
+    <h2>18. AVIÕES EM ÁREA NEUTRA</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Proibido jogar aviões contra áreas neutras ou utilizá-los para causar dano em zonas pacíficas.</p>
+    <h3>Exemplos:</h3>
+    <ul>
+      <li>Colidir intencionalmente com prédios, veículos ou jogadores em áreas neutras.</li>
+    </ul>
+    <h3>Punição:</h3>
+    <ul>
+      <li>Veterano: 60 minutos no carandiru.</li>
+      <li>Novato: 30 minutos no carandiru.</li>
+    </ul>
+    <p>Observação: Áreas neutras devem ser respeitadas como zonas seguras.</p>
+  </div>
+
+  <hr>
+
+  <!-- 19. USO INDEVIDO DO /ANG /GOV /NO -->
+  <div class="regra">
+    <h2>19. USO INDEVIDO DO /ANG /GOV /NO</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Proibido utilizar os comandos /ang, /gov ou /no para fins fora do contexto organizacional ou mencionando jogadores sem razão.</p>
+    <h3>Exemplos:</h3>
+    <ul>
+      <li>Anúncios que não sejam oficiais ou que contenham brincadeiras.</li>
+      <li>Mencionar jogadores sem relação com sequestros ou ações RPG.</li>
+    </ul>
+    <h3>Punição:</h3>
+    <ul>
+      <li>Veterano: 60 minutos no carandiru.</li>
+      <li>Novato: 30 minutos no carandiru.</li>
+    </ul>
+    <p>Observação: Esses comandos são ferramentas sérias e devem ser usados com responsabilidade.</p>
+  </div>
+
+  <hr>
+
+  <!-- 20. FLOOD NO CHAT -->
+  <div class="regra">
+    <h2>20. FLOOD NO CHAT</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Proibido repetir mensagens no chat mais de duas vezes seguidas.</p>
+    <h3>Exemplos:</h3>
+    <ul>
+      <li>Enviar a mesma frase ou caracteres várias vezes em pouco tempo.</li>
+      <li>Perturbar o chat repetindo mensagens.</li>
+    </ul>
+    <h3>Punição:</h3>
+    <ul>
+      <li>Veterano: 30 minutos no carandiru.</li>
+      <li>Novato: /kick do servidor.</li>
+    </ul>
+    <p>Observação: Em caso de flood acidental, explique à administração para evitar punições.</p>
+  </div>
+
+  <hr>
+
+  <!-- 21. SURF EM PORTA-MALAS -->
+  <div class="regra">
+    <h2>21. SURF EM PORTA-MALAS</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Permitido apenas com porta-malas aberto usando /gro e sem vagas no carro.</p>
+    <h3>Condições:</h3>
+    <ul>
+      <li>Policiais não podem viajar no porta-malas.</li>
+      <li>É proibido transportar procurados/presos no porta-malas.</li>
+      <li>Surf permitido apenas no veículo do procurado, se ele for o motorista.</li>
+    </ul>
+    <h3>Punição:</h3>
+    <ul>
+      <li>1ª ocorrência veterano: tapa + advertência verbal.</li>
+      <li>2ª ocorrência veterano: 60 minutos no carandiru.</li>
+      <li>Novato: tapa + advertência verbal.</li>
+    </ul>
+    <p>Observação: Siga as diretrizes para evitar punições e manter o RPG coerente.</p>
+  </div>
+
+  <hr>
+
+  <!-- 22. AGRESSÃO INDEVIDA A POLICIAIS -->
+  <div class="regra">
+    <h2>22. AGRESSÃO INDEVIDA A POLICIAIS</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Proibido atirar em policiais sem voz de prisão, mesmo sendo procurado.</p>
+    <h3>Exceção:</h3>
+    <ul>
+      <li>Assassinos podem matar alvos sem usar /m, desde que seja contrato.</li>
+    </ul>
+    <h3>Punição:</h3>
+    <ul>
+      <li>Veterano: 150 minutos no carandiru.</li>
+      <li>Novato: 60 minutos no carandiru.</li>
+    </ul>
+    <p>Observação: Respeito à autoridade policial é essencial para a ordem no RPG.</p>
+  </div>
+
+  <hr>
+
+  <!-- 23. ARMAS PESADAS EM INTERIORES OU ROUBOS -->
+  <div class="regra">
+    <h2>23. ARMAS PESADAS EM INTERIORES OU ROUBOS</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Proibido usar granadas, lança-mísseis ou lança-chamas em interiores ou roubos.</p>
+    <h3>Exemplos:</h3>
+    <ul>
+      <li>Usar granadas em bancos, lojas ou delegacias.</li>
+      <li>Utilizar armas pesadas em áreas internas.</li>
+    </ul>
+    <h3>Punição:</h3>
+    <ul>
+      <li>Veterano: 100 minutos no carandiru + aviso.</li>
+      <li>Novato: 60 minutos no carandiru.</li>
+    </ul>
+    <p>Observação: Essas armas são restritas e seu uso indevido quebra o realismo do RPG.</p>
+  </div>
+
+  <hr>
+
+  <!-- 24. COMÉRCIO EXTERNO -->
+  <div class="regra">
+    <h2>24. COMÉRCIO EXTERNO</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Proibido vender, trocar ou negociar itens do jogo por dinheiro real ou bens externos.</p>
+    <h3>Exemplos:</h3>
+    <ul>
+      <li>Vender contas ou moedas via redes sociais.</li>
+      <li>Trocar itens por serviços fora do servidor.</li>
+    </ul>
+    <h3>Punição:</h3>
+    <ul>
+      <li>Veterano: Banimento permanente.</li>
+      <li>Novato: 100 minutos no carandiru + advertência verbal.</li>
+    </ul>
+    <p>Observação: O comércio deve acontecer apenas dentro do ambiente do jogo.</p>
+  </div>
+
+  <hr>
+
+  <!-- 25. TÍTULOS INDEVIDOS NA ARARA -->
+  <div class="regra">
+    <h2>25. TÍTULOS INDEVIDOS NA ARARA</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Proibido usar títulos que imitem cargos oficiais (admin, líder) ou com conteúdo ofensivo.</p>
+    <h3>Exemplos:</h3>
+    <ul>
+      <li>Títulos como "Admin", "Moderador", ou com nome de cheats/programas ilegais.</li>
+    </ul>
+    <h3>Punição:</h3>
+    <ul>
+      <li>Veterano: Advertência verbal.</li>
+      <li>Novato: Advertência verbal.</li>
+    </ul>
+    <p>Observação: Títulos devem ser usados com bom senso e respeitar o ambiente do servidor.</p>
+  </div>
+
+  <hr>
+  <!-- 26. CBUG EM MOBILE -->
+  <div class="regra">
+    <h2>26. CBUG EM MOBILE</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Jogadores mobile estão proibidos de usar cbug para obter vantagem.</p>
+    <h3>Punição:</h3>
+    <ul>
+      <li>1ª ocorrência: Advertência verbal.</li>
+      <li>Reincidência: 150 minutos no carandiru.</li>
+    </ul>
+    <p>Observação: A regra visa garantir igualdade e justiça no combate, impedindo práticas abusivas. Os jogadores devem respeitar as limitações da plataforma utilizada.</p>
+  </div>
+
+  <hr>
+
+  <!-- 27. DIVULGAÇÃO DE OUTROS SERVIDORES -->
+  <div class="regra">
+    <h2>27. DIVULGAÇÃO DE OUTROS SERVIDORES</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Proibido divulgar, promover ou mencionar outros servidores dentro deste servidor.</p>
+    <h3>Exemplos:</h3>
+    <ul>
+      <li>Mencionar nomes de outros servidores em qualquer meio de comunicação.</li>
+      <li>Convidar jogadores para outros servidores.</li>
+    </ul>
+    <h3>Punição:</h3>
+    <ul>
+      <li>Servidor RPG: Banimento permanente.</li>
+      <li>Servidor DM: Banimento permanente.</li>
+    </ul>
+    <p>Observação: Essa regra protege a integridade da comunidade. Promoções externas comprometem o foco e o desenvolvimento saudável do servidor.</p>
+  </div>
+
+  <hr>
+
+  <!-- 28. USO DE PROGRAMAS E MODIFICAÇÕES ILEGAIS -->
+  <div class="regra">
+    <h2>28. USO DE PROGRAMAS E MODIFICAÇÕES ILEGAIS</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Proibido utilizar qualquer tipo de programa ou modificação ilegal que ofereça vantagens no jogo.</p>
+    <h3>Exemplos:</h3>
+    <ul>
+      <li>Xiter, Cleo, Aimbot, Macro, Auto C-Bug, entre outros.</li>
+    </ul>
+    <h3>Punição:</h3>
+    <ul>
+      <li>Primeira vez: Banimento de 1 mês.</li>
+      <li>Segunda vez: Banimento permanente (volta somente com taxa).</li>
+    </ul>
+    <p>Observação: Essas práticas violam o fair play e são severamente punidas para manter a competitividade justa.</p>
+  </div>
+
+  <hr>
+
+  <!-- 29. CALÚNIA, DIFAMAÇÃO OU AMEAÇAS -->
+  <div class="regra">
+    <h2>29. CALÚNIA, DIFAMAÇÃO OU AMEAÇAS</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Proibido praticar calúnia, difamação contra o servidor, ou ameaças a membros da comunidade.</p>
+    <h3>Exemplos:</h3>
+    <ul>
+      <li>Espalhar boatos maliciosos sobre o servidor ou seus membros.</li>
+      <li>Ameaçar jogadores, helpers ou administradores.</li>
+    </ul>
+    <h3>Punição:</h3>
+    <ul>
+      <li>Veterano e Novato: Banimento permanente.</li>
+    </ul>
+    <p>Observação: A administração preza por um ambiente seguro. Ataques verbais ou ameaças são tratados com máxima severidade.</p>
+  </div>
+
+  <hr>
+
+  <!-- 30. TROLLAR EVENTOS DO SERVIDOR -->
+  <div class="regra">
+    <h2>30. TROLLAR EVENTOS DO SERVIDOR</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Proibido trollar, atrapalhar ou prejudicar o andamento de eventos oficiais.</p>
+    <h3>Exemplos:</h3>
+    <ul>
+      <li>Criar tumulto nos eventos.</li>
+      <li>Usar comandos ou ações para perturbar a organização ou participantes.</li>
+    </ul>
+    <h3>Punição:</h3>
+    <ul>
+      <li>Veterano: 30 minutos no carandiru.</li>
+      <li>Novato: /kick do servidor.</li>
+    </ul>
+    <p>Observação: Eventos são planejados para entreter e promover a integração entre os jogadores. Desrespeitar isso afeta toda a comunidade.</p>
+  </div>
+
+  <hr>
+
+  <!-- 31. ATACAR DURANTE ATENDIMENTOS -->
+  <div class="regra">
+    <h2>31. ATACAR DURANTE ATENDIMENTOS</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Proibido atacar, matar ou atrapalhar jogadores enquanto estão em atendimento com admin ou helper.</p>
+    <h3>Exemplos:</h3>
+    <ul>
+      <li>Matar alguém durante um atendimento.</li>
+      <li>Interferir em reuniões administrativas.</li>
+    </ul>
+    <h3>Punição:</h3>
+    <ul>
+      <li>Veterano: 100 minutos no carandiru.</li>
+      <li>Novato: /kick do servidor.</li>
+    </ul>
+    <p>Observação: O atendimento é essencial para resolução de conflitos e dúvidas. Qualquer interferência compromete o suporte à comunidade.</p>
+  </div>
+
+  <hr>
+
+  <!-- 32. OFENSAS À ADMINISTRAÇÃO -->
+  <div class="regra">
+    <h2>32. OFENSAS À ADMINISTRAÇÃO</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Proibido dirigir ofensas ou qualquer forma de desrespeito à equipe administrativa.</p>
+    <h3>Exemplos:</h3>
+    <ul>
+      <li>Xingamentos, deboche ou comentários pejorativos direcionados a admins.</li>
+      <li>Discriminação contra qualquer membro da equipe.</li>
+    </ul>
+    <h3>Punição:</h3>
+    <ul>
+      <li>Ofensa grave: Banimento de 1 mês.</li>
+      <li>Desrespeito leve: 200 minutos no carandiru + aviso.</li>
+    </ul>
+    <p>Observação: O respeito aos administradores é essencial para a ordem do servidor. A tolerância a esse tipo de infração é zero.</p>
+  </div>
+
+  <hr>
+
+  <!-- 33. EXPLORAÇÃO DE BUGS OU FALHAS DO JOGO -->
+  <div class="regra">
+    <h2>33. EXPLORAÇÃO DE BUGS OU FALHAS DO JOGO</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Proibido explorar bugs ou falhas do servidor para obter vantagens injustas.</p>
+    <h3>Exemplos:</h3>
+    <ul>
+      <li>Utilizar falhas no sistema de combate para obter vantagem.</li>
+      <li>Aproveitar erros no jogo para se beneficiar de maneira não intencional.</li>
+    </ul>
+    <h3>Punição:</h3>
+    <ul>
+      <li>Veterano: Banimento permanente.</li>
+      <li>Novato: 200 minutos no carandiru + correção do bug.</li>
+    </ul>
+    <p>Observação: Sempre que encontrar um bug, notifique a administração imediatamente.</p>
+  </div>
+
+  <hr>
+
+  <!-- 34. ATRAPALHAR AÇÕES DE POLÍCIA OU EMERGÊNCIAS -->
+  <div class="regra">
+    <h2>34. ATRAPALHAR AÇÕES DE POLÍCIA OU EMERGÊNCIAS</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Proibido interferir em ações policiais ou emergências, comprometendo a integridade da operação.</p>
+    <h3>Exemplos:</h3>
+    <ul>
+      <li>Impedir o trabalho de policiais durante operações de perseguição.</li>
+      <li>Bloquear áreas de emergência para interferir com resgate ou evacuação.</li>
+    </ul>
+    <h3>Punição:</h3>
+    <ul>
+      <li>Veterano: 100 minutos no carandiru.</li>
+      <li>Novato: /kick do servidor + advertência verbal.</li>
+    </ul>
+    <p>Observação: Qualquer tentativa de prejudicar a atuação policial será tratada com rigor.</p>
+  </div>
+
+  <hr>
+
+  <!-- 35. ABUSO DE RECURSOS DE COMUNICAÇÃO -->
+  <div class="regra">
+    <h2>35. ABUSO DE RECURSOS DE COMUNICAÇÃO</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Proibido utilizar recursos de comunicação (/sms, /v, VOIP) de maneira abusiva ou para prejudicar outros jogadores.</p>
+    <h3>Exemplos:</h3>
+    <ul>
+      <li>Enviar mensagens privadas excessivas para outro jogador.</li>
+      <li>Usar VOIP para gritar ou produzir ruídos prejudiciais.</li>
+    </ul>
+    <h3>Punição:</h3>
+    <ul>
+      <li>Veterano: 60 minutos no carandiru.</li>
+      <li>Novato: /kick do servidor.</li>
+    </ul>
+    <p>Observação: A comunicação deve facilitar a interação entre jogadores. Abuso será punido para manter o ambiente agradável.</p>
+  </div>
+
+  <hr>
+
+  <!-- 36. MISSÕES DE CONTRA-BANDO POR POLICIAIS -->
+  <div class="regra">
+    <h2>36. MISSÕES DE CONTRA-BANDO POR POLICIAIS</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>É proibido que membros de organizações policiais realizem missões de contra-bando, independentemente do objetivo.</p>
+    <p>Missões de contra-bando são atividades ilegais destinadas exclusivamente a organizações criminosas. Policiais que participarem dessas missões, mesmo investigando, violam princípios de conduta e comprometem a coerência do RPG.</p>
+    <h3>Punição:</h3>
+    <ul>
+      <li>Ocorrência veterano: 200 minutos no carandiru + aviso.</li>
+      <li>Ocorrência novato: 100 minutos no carandiru.</li>
+    </ul>
+    <p>Observação: Policiais devem manter postura condizente com seu cargo e agir dentro dos limites legais definidos pelo servidor.</p>
+  </div>
+
+  <!-- Continue com o mesmo padrão para as regras 07 até 36 -->
+
+
+    </div>
+    <!-- REGRAS PARA STAFF -->
+
+<!-- 1. Abuso de Comandos Administrativos -->
+
+   
+  
+<div id="regras-staff" class="section active">
+<div class="regra">
+  <h2>1. Abuso de Comandos Administrativos</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Uso de comandos de admin para benefício próprio ou prejudicar outros sem motivo.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Advertência → Rebaixamento → Banimento da equipe</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 2. Imparcialidade / Proteção a Amigos -->
+<div class="regra">
+  <h2>2. Imparcialidade / Proteção a Amigos</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Favorecimento de amigos em denúncias, atendimento ou punições.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Advertência → Rebaixamento imediato → Banimento da equipe</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 3. Falta de Profissionalismo -->
+<div class="regra">
+  <h2>3. Falta de Profissionalismo</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Linguagem inadequada, tretas, provocações ou atitudes infantis no /relatorio, /rel, chat admin ou global.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Advertência → Suspensão (1-3 dias) → Rebaixamento</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 4. Ausência Sem Justificativa -->
+<div class="regra">
+  <h2>4. Ausência Sem Justificativa</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Inatividade prolongada sem avisar no Discord.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Advertência → Remoção temporária → Banimento da equipe (caso reincida)</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 5. Negligência no Atendimento -->
+<div class="regra">
+  <h2>5. Negligência no Atendimento</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Ignorar /relatorio, atendimento demorado ou mal feito.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Advertência → Suspensão → Rebaixamento</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 6. Informações Confidenciais Vazadas -->
+<div class="regra">
+  <h2>6. Informações Confidenciais Vazadas</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Vazar informações internas (atualizações, decisões da staff, denúncias em andamento, etc.).</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Banimento da equipe imediatamente</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 7. Uso Indevido de Conta Staff -->
+<div class="regra">
+  <h2>7. Uso Indevido de Conta Staff</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Usar conta administrativa para jogar como player, fazer atividades ilegais, farmar dinheiro, etc.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Rebaixamento → Banimento da equipe</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 8. Corrupção / Venda de Benefícios -->
+<div class="regra">
+  <h2>8. Corrupção / Venda de Benefícios</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Cobrar por cargos, veículos, dinheiro ou vantagens no servidor.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Banimento imediato do servidor e da equipe</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 9. Falta de Comunicação com a Equipe -->
+<div class="regra">
+  <h2>9. Falta de Comunicação com a Equipe</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Não participar de reuniões, não responder no grupo da staff, não se informar das atualizações.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Advertência → Suspensão → Rebaixamento</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 10. Maus Tratos a Players -->
+<div class="regra">
+  <h2>10. Maus Tratos a Players</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Tratar mal players, ser grosseiro, sarcástico ou humilhante.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Advertência → Rebaixamento → Remoção</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 11. Desrespeito a Superiores -->
+<div class="regra">
+  <h2>11. Desrespeito a Superiores</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Questionar ordens sem fundamentos, desobedecer líder/admin superior.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Advertência → Rebaixamento</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 12. Acúmulo de Advertências -->
+<div class="regra">
+  <h2>12. Acúmulo de Advertências</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Três advertências acumuladas em curto período.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Rebaixamento ou remoção imediata da equipe</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 13. Conflitos Internos / Panelinhas -->
+<div class="regra">
+  <h2>13. Conflitos Internos / Panelinhas</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Criar divisões ou conflitos dentro da equipe, formar grupinhos tóxicos.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Advertência → Suspensão → Rebaixamento ou remoção</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 14. Fingir Atendimento -->
+<div class="regra">
+  <h2>14. Fingir Atendimento</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Marcar como "resolvido" sem realmente atender o player.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Advertência → Rebaixamento</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 15. Desrespeito ao Manual/Admin Guide -->
+<div class="regra">
+  <h2>15. Desrespeito ao Manual/Admin Guide</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Ignorar regras e procedimentos internos definidos pela liderança.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Advertência → Suspensão → Remoção</li>
+  </ul>
+</div>
+
+<hr>
+<!-- 16. Divulgação Indevida -->
+<div class="regra">
+  <h2>16. Divulgação Indevida</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Divulgar outros servidores, links externos ou conteúdos não relacionados sem autorização.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Rebaixamento → Banimento da equipe</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 17. Trocar Favores com Players -->
+<div class="regra">
+  <h2>17. Trocar Favores com Players</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Dar benefícios em troca de algo (elogios, apoio, vantagens).</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Advertência → Rebaixamento → Remoção da equipe</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 18. Flood ou Spam no Chat Admin -->
+<div class="regra">
+  <h2>18. Flood ou Spam no Chat Admin</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Enviar várias mensagens desnecessárias, usar o chat como conversa paralela.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Advertência → Mutado internamente → Suspensão</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 19. Utilizar Comandos em Área Proibida -->
+<div class="regra">
+  <h2>19. Utilizar Comandos em Área Proibida</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Usar comandos administrativos em eventos, guerras ou locais onde podem interferir no jogo.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Advertência → Suspensão → Rebaixamento</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 20. Criar Eventos sem Permissão -->
+<div class="regra">
+  <h2>20. Criar Eventos sem Permissão</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Realizar eventos usando comandos admin sem autorização da liderança.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Advertência → Rebaixamento</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 21. Assumir Denúncias Envolvendo Amigos -->
+<div class="regra">
+  <h2>21. Assumir Denúncias Envolvendo Amigos</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Pegar denúncias ou atendimentos de players com quem tem amizade próxima.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Advertência → Remoção do atendimento → Rebaixamento</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 22. Editar Logs ou Ocultar Provas -->
+<div class="regra">
+  <h2>22. Editar Logs ou Ocultar Provas</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Alterar registros, prints ou esconder informações em denúncias ou revisões.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Banimento imediato da equipe</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 23. Participar de Facções/Empregos com Conta Staff -->
+<div class="regra">
+  <h2>23. Participar de Facções/Empregos com Conta Staff</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Envolver-se em atividades comuns de player com conta administrativa.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Advertência → Rebaixamento → Banimento da equipe</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 24. Não Reportar Bugs Encontrados -->
+<div class="regra">
+  <h2>24. Não Reportar Bugs Encontrados</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Encontrar bugs e não reportar para a liderança/admin responsável.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Advertência → Rebaixamento</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 25. Desrespeito à Hierarquia -->
+<div class="regra">
+  <h2>25. Desrespeito à Hierarquia</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Ignorar decisões da liderança ou agir como se tivesse cargo superior.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Advertência → Rebaixamento</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 26. Comportamento Inadequado no Discord -->
+<div class="regra">
+  <h2>26. Comportamento Inadequado no Discord</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Discussões, brigas ou ironias com membros no Discord, inclusive canais internos da staff.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Advertência → Mutado → Suspensão</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 27. Falta de Sigilo nas Denúncias -->
+<div class="regra">
+  <h2>27. Falta de Sigilo nas Denúncias</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Comentar, vazar ou expor denúncias em andamento publicamente.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Advertência → Suspensão → Rebaixamento</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 28. Usar Comandos sem Justificativa -->
+<div class="regra">
+  <h2>28. Usar Comandos sem Justificativa</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Utilizar /trazer, /ir, /slap, /kick sem explicar ou de forma injusta.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Advertência → Rebaixamento</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 29. Convidar Players para Servidores Paralelos -->
+<div class="regra">
+  <h2>29. Convidar Players para Servidores Paralelos</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Aproveitar o cargo para puxar jogadores para projetos próprios.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Banimento do servidor e da equipe</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 30. Ser Staff em Outro Servidor Sem Aviso -->
+<div class="regra">
+  <h2>30. Ser Staff em Outro Servidor Sem Aviso</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Atuar como admin/helper/moderador em outro servidor SAMP sem notificar a administração.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Advertência → Avaliação → Remoção em caso de conflito de interesses</li>
+  </ul>
+</div>
+
+<hr>
+<!-- 31. Usar Skin Indevida na Conta Admin -->
+<div class="regra">
+  <h2>31. Usar Skin Indevida na Conta Admin</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Utilizar skins restritas (ex: líderes, especiais, bugs) sem autorização.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Advertência → Suspensão → Rebaixamento</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 32. Tratar Denúncias com Descaso -->
+<div class="regra">
+  <h2>32. Tratar Denúncias com Descaso</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Ignorar provas, responder de forma irônica ou não dar atenção necessária.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Advertência → Reorientação → Rebaixamento</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 33. Usar Admin Para Observar -->
+<div class="regra">
+  <h2>33. Usar Admin Para Observar</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Ficar em modo espectador ou usando comandos para espionar.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Rebaixamento → Banimento da equipe</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 34. Fingir Ser Player Com Conta Alternativa -->
+<div class="regra">
+  <h2>34. Fingir Ser Player Com Conta Alternativa</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Criar conta secundária para jogar ou espionar players/facções.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Advertência → Rebaixamento → Banimento da equipe</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 35. Ignorar Chamados Com Intenção -->
+<div class="regra">
+  <h2>35. Ignorar Chamados Com Intenção</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Estar online e se recusar a atender players de forma proposital.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Advertência → Suspensão → Rebaixamento</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 36. Ameaçar Players com Ban ou Punição -->
+<div class="regra">
+  <h2>36. Ameaçar Players com Ban ou Punição</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Usar o cargo para intimidar ou ameaçar jogadores.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Advertência → Rebaixamento → Remoção da equipe</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 37. Mentir em Relatórios Internos -->
+<div class="regra">
+  <h2>37. Mentir em Relatórios Internos</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Apresentar informações falsas em logs, reuniões ou documentos administrativos.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Rebaixamento imediato → Banimento da equipe</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 38. Forjar Provas em Denúncias -->
+<div class="regra">
+  <h2>38. Forjar Provas em Denúncias</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Criar prints editadas, vídeos cortados ou qualquer forma de manipulação.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Banimento imediato da equipe e do servidor</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 39. Ser Flagado Com Cheats ou Programas Irregulares -->
+<div class="regra">
+  <h2>39. Ser Flagado Com Cheats ou Programas Irregulares</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Mesmo que não usados com conta staff, a presença de programas ilegais é proibida.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Banimento do servidor e desligamento da staff</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 40. Fazer Piadas com Situações Graves -->
+<div class="regra">
+  <h2>40. Fazer Piadas com Situações Graves</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Brincar com bugs, falhas no servidor, denúncias sérias ou situações sensíveis.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Advertência → Suspensão → Rebaixamento</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 41. Atuar em Denúncia Sem Ser Responsável -->
+<div class="regra">
+  <h2>41. Atuar em Denúncia Sem Ser Responsável</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Interferir ou comentar em denúncias que não estão sob sua responsabilidade.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Advertência → Suspensão → Rebaixamento</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 42. Usar Comandos Administrativos para Brincadeiras -->
+<div class="regra">
+  <h2>42. Usar Comandos Administrativos para Brincadeiras</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Aplicar slap, prender, congelar ou puxar players apenas por diversão.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Advertência → Rebaixamento → Remoção da equipe</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 43. Ser Flagado em Anti-RPG com Conta Secundária -->
+<div class="regra">
+  <h2>43. Ser Flagado em Anti-RPG com Conta Secundária</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Jogar de forma anti-RPG em outra conta, mesmo que não staff.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Advertência → Rebaixamento → Banimento da equipe</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 44. Agir como "Dono do Servidor" -->
+<div class="regra">
+  <h2>44. Agir como "Dono do Servidor"</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Se comportar de forma autoritária, ignorando a hierarquia ou regras.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Advertência → Rebaixamento</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 45. Criar Conflito Entre Staffs -->
+<div class="regra">
+  <h2>45. Criar Conflito Entre Staffs</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Colocar membros da equipe uns contra os outros, gerar intrigas ou fofocas.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Advertência → Suspensão → Remoção da equipe</li>
+  </ul>
+</div>
+
+<hr>
+<!-- 46. Abandonar Atendimentos no Meio -->
+<div class="regra">
+  <h2>46. Abandonar Atendimentos no Meio</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Sair no meio do atendimento sem terminar ou avisar outro admin.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Advertência → Suspensão</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 47. Utilizar TAG de Admin em Outro Servidor -->
+<div class="regra">
+  <h2>47. Utilizar TAG de Admin em Outro Servidor</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Usar o nome do servidor ou sua posição para se promover fora dele.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Advertência → Rebaixamento → Remoção</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 48. Brincar com o /ban, /kick ou /cadeia -->
+<div class="regra">
+  <h2>48. Brincar com o /ban, /kick ou /cadeia</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Simular punições no chat (ex: "Fulano banido") apenas para zoeira.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Advertência → Suspensão → Rebaixamento</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 49. Ser Instruído e Repetir o Erro -->
+<div class="regra">
+  <h2>49. Ser Instruído e Repetir o Erro</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Receber orientação sobre uma regra e reincidir no mesmo erro.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Rebaixamento direto → Avaliação para remoção da equipe</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 50. Aproveitar Cargo para Ganhar Respeito na Comunidade -->
+<div class="regra">
+  <h2>50. Aproveitar Cargo para Ganhar Respeito na Comunidade</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Forçar players a obedecer fora do servidor com base no seu cargo.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Advertência → Rebaixamento</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 51. Deslogar Para Evitar Responsabilidade -->
+<div class="regra">
+  <h2>51. Deslogar Para Evitar Responsabilidade</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Sair do jogo ou Discord para fugir de denúncia, reunião ou atendimento.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Advertência → Suspensão → Rebaixamento</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 52. Alterar Informações no Painel/Admin Log Sem Aviso -->
+<div class="regra">
+  <h2>52. Alterar Informações no Painel/Admin Log Sem Aviso</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Modificar nome, rank ou status sem permissão do Superior.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Advertência → Reversão imediata → Rebaixamento</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 53. Ajudar Player a Burlar Regras -->
+<div class="regra">
+  <h2>53. Ajudar Player a Burlar Regras</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Ensinar ou incentivar qualquer tipo de brecha ou bug.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Rebaixamento → Banimento da equipe</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 54. Negar Ajuda a Novato por Preguiça -->
+<div class="regra">
+  <h2>54. Negar Ajuda a Novato por Preguiça</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Ignorar ou maltratar jogadores novos no atendimento por não querer explicar.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Advertência → Suspensão → Remoção da staff</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 55. Aplicar Punições Sem Provas -->
+<div class="regra">
+  <h2>55. Aplicar Punições Sem Provas</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Banir, kickar ou prender sem nenhuma prova válida.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Advertência → Reversão da punição → Rebaixamento</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 56. Ser Staff e Ter Histórico Sujo em Outros Servidores -->
+<div class="regra">
+  <h2>56. Ser Staff e Ter Histórico Sujo em Outros Servidores</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Descobrir que o membro foi banido por cheats ou má conduta em outro servidor.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Avaliação interna → Possível remoção da equipe</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 57. Utilizar Admin Para Impedir Morte ou Prisão -->
+<div class="regra">
+  <h2>57. Utilizar Admin Para Impedir Morte ou Prisão</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Ativar invencibilidade, teleportar ou sair de situações de risco indevidamente.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Rebaixamento → Banimento da equipe</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 58. Ser Desonesto em Revisões de Ban -->
+<div class="regra">
+  <h2>58. Ser Desonesto em Revisões de Ban</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Defender players banidos com base em informações falsas ou manipuladas.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Advertência → Suspensão → Rebaixamento</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 59. Incentivar Staffs a Quebrar Regras -->
+<div class="regra">
+  <h2>59. Incentivar Staffs a Quebrar Regras</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Motivar ou sugerir para que outros membros façam algo contra o regulamento.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Advertência → Rebaixamento → Remoção</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 60. Abusar de Comandos em Atendimentos -->
+<div class="regra">
+  <h2>60. Abusar de Comandos em Atendimentos</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Utilizar slap, congelar ou teleportar durante um atendimento sem necessidade real.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Advertência → Suspensão → Rebaixamento</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 61. Ignorar Ordens Diretas de um Superior -->
+<div class="regra">
+  <h2>61. Ignorar Ordens Diretas de um Superior</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Recusar-se a cumprir instruções passadas por um Superior durante situação administrativa.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Advertência → Rebaixamento</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 62. Se Beneficiar de Eventos ou Premiações -->
+<div class="regra">
+  <h2>62. Se Beneficiar de Eventos ou Premiações</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Participar de eventos premiados ou sorteios como admin ativo.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Advertência → Reembolso dos prêmios → Suspensão</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 63. Utilizar Comandos Admin em Facção Alternativa -->
+<div class="regra">
+  <h2>63. Utilizar Comandos Admin em Facção Alternativa</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Usar comandos administrativos enquanto joga disfarçado em facção.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Rebaixamento → Banimento da equipe</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 64. Responder Denúncia com Opinião Pessoal -->
+<div class="regra">
+  <h2>64. Responder Denúncia com Opinião Pessoal</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Julgar denúncia com base em amizade ou achismo, sem provas claras.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Advertência → Reanálise da denúncia → Rebaixamento</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 65. Postar Conteúdo Impróprio nos Canais Internos -->
+<div class="regra">
+  <h2>65. Postar Conteúdo Impróprio nos Canais Internos</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Compartilhar memes ofensivos, conteúdos +18 ou mensagens inapropriadas na área da staff.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Advertência → Mutado → Suspensão</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 66. Modificar Regras Sem Autorização -->
+<div class="regra">
+  <h2>66. Modificar Regras Sem Autorização</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Alterar ou divulgar nova regra sem aprovação do Superior.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Advertência → Reversão da mudança → Rebaixamento</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 67. Expor Conversas Privadas da Staff -->
+<div class="regra">
+  <h2>67. Expor Conversas Privadas da Staff</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Vazar prints, áudios ou falas internas sem consentimento.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Rebaixamento → Remoção da equipe</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 68. Forçar Players a Retirar Denúncias -->
+<div class="regra">
+  <h2>68. Forçar Players a Retirar Denúncias</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Pedir ou pressionar players a excluir denúncias contra membros da equipe.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Advertência → Rebaixamento → Remoção</li>
+  </ul>
+</div>
+
+<hr>
+<!-- 69. Fingir Ser Iniciante Para Espionar Jogadores -->
+<div class="regra">
+  <h2>69. Fingir Ser Iniciante Para Espionar Jogadores</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Criar nova conta e se passar por novato para observar facções ou jogadores.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Rebaixamento → Banimento da equipe</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 70. Tratar Jogadores com Deboche ou Ironia -->
+<div class="regra">
+  <h2>70. Tratar Jogadores com Deboche ou Ironia</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Responder com sarcasmo, deboche ou falta de profissionalismo durante atendimentos.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Advertência → Suspensão</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 71. Revisão de Banimento -->
+<div class="regra">
+  <h2>71. Revisão de Banimento</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Somente Administradores com o cargo master ou superior podem analisar revisões de banimento.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Advertência → Suspensão</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- 72. Call Administrativa -->
+<div class="regra">
+  <h2>72. Call Administrativa</h2>
+  <img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+  <p>Todos os administradores, antes de logarem no servidor, devem entrar na call de trabalho.</p>
+  <h3>Punição:</h3>
+  <ul>
+    <li>Advertência verbal → Suspensão</li>
+  </ul>
+</div>
+</div>
+
+
+   <div id="regras-denuncias" class="section active">
+  <div class="regra">
+    <h2>📋 REGRAS DE DENÚNCIAS</h2>
+    <p>Atenção: Qualquer denúncia que infrinja uma das regras abaixo será anulada por estar fora dos padrões.</p>
+  </div>
+
+  <hr>
+
+  <div class="regra">
+    <h2>🧾 Regras Gerais</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <ul>
+      <li>Provas devem ser legítimas, sem cortes ou edições que atrapalhem a análise da staff.</li>
+      <li>Formulário de denúncia deve estar corretamente preenchido, caso contrário será negado.</li>
+      <li>A organização dos envolvidos deve ser citada.</li>
+      <li>Denúncias com mais de 48 horas (2 dias) da infração serão recusadas.</li>
+      <li>Todo jogador tem o direito de se defender.</li>
+      <li>Não é permitido denunciar em nome de outra pessoa.</li>
+      <li>Apenas o responsável pela denúncia pode decidir se haverá reversão.</li>
+      <li>Somente staff com cargo superior pode modificar uma denúncia.</li>
+      <li>A explicação do motivo do fechamento deve ser postada antes de finalizar o tópico.</li>
+      <li>Após uma equipe iniciar a análise, outra só pode assumir com autorização de um superior.</li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <div class="regra">
+    <h2>📁 Especificações por Tipo de Denúncia</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <h3>🔫 DM / Anti-RPG</h3>
+    <ul>
+      <li>É obrigatória 1 imagem do jogador morto no local do crime e 1 imagem do /vercombates.</li>
+      <li>Em casos de Anti-RPG, é obrigatório mínimo de 2 prints ou 1 vídeo contendo a infração.</li>
+    </ul>
+
+    <h3>🧠 Cheaters</h3>
+    <ul>
+      <li>Somente provas em vídeo são aceitas.</li>
+      <li>O vídeo deve ter mínimo de 20 segundos ou pelo menos 3 clipes.</li>
+    </ul>
+
+    <h3>🧪 Testes e Provas</h3>
+    <ul>
+      <li>Aceitamos apenas arquivos hospedados em: Imgur, Google Drive, Lightshot (print.sc), YouTube.</li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <div class="regra">
+    <h2>🚫 Condutas Proibidas</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <ul>
+      <li>Desrespeito, xingamentos, preconceito ou racismo em sua defesa:
+        <ul>
+          <li>Se for o denunciante → Denúncia encerrada sem resolução.</li>
+          <li>Se for o acusado → Denúncia será aceita automaticamente, sem direito à defesa.</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <div class="regra">
+    <h2>🔄 Reversões e Punições</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <ul>
+      <li>Caso o acusado prove que a denúncia é falsa, pode solicitar indenização por reversa.</li>
+      <li>O denunciante será punido com o dobro da indenização concedida ao acusado.</li>
+      <li>Em casos de forja de provas, aplica-se punição de 250 minutos na cadeia administrativa.</li>
+      <li>Em casos de acordo in-game (negociações para retirada da denúncia):
+        <ul>
+          <li>É permitido negociar com cash/kk.</li>
+          <li>Caso o acordo não seja cumprido, o infrator receberá 300 minutos de cadeia + aviso por "Quebra de Acordo".</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+
+    
+    <div id="regras-chat" class="section active">
+  <div class="regra">
+    <h2>📢 REGRAS DE CHAT</h2>
+    <p>Atenção: O uso correto dos chats do servidor é obrigatório. Infrações serão punidas conforme abaixo.</p>
+  </div>
+
+  <hr>
+
+  <div class="regra">
+    <h2>1. Discussões e Ofensas</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>É proibido iniciar ou participar de discussões que possam levar a ofensas pessoais ou prejudicar a experiência de outros jogadores.</p>
+    <ul>
+      <li><strong>Punição:</strong> Discussão</li>
+      <li><strong>Ocorrência veterano:</strong> 100 minutos no carandiru</li>
+      <li><strong>Ocorrência novato:</strong> 60 minutos no carandiru</li>
+    </ul>
+  </div>
+
+  <div class="regra">
+    <h2>2. Burlar censura</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Não é permitido burlar as censuras impostas nos chats. Jogadores flagrados tentando evitar a censura serão bloqueados de usar o chat por um período determinado.</p>
+    <ul>
+      <li><strong>Punição:</strong> Burlando censura</li>
+      <li><strong>Ocorrência:</strong> Bloqueio no chat</li>
+    </ul>
+  </div>
+
+  <div class="regra">
+    <h2>3. Comportamento ofensivo</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Comportamentos ofensivos ou prejudiciais a outros jogadores são estritamente proibidos, incluindo ofensas discriminatórias, conotação sexual, violência moral, xenofobia, racismo e qualquer outra forma de discriminação.</p>
+    <ul>
+      <li><strong>Punição:</strong> Comportamento ofensivo</li>
+      <li><strong>Ocorrência:</strong> Banimento permanente</li>
+    </ul>
+  </div>
+
+  <div class="regra">
+    <h2>4. Uso indevido do /n</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>É proibido utilizar o /n para enviar mensagens que não sejam uma dúvida ou resposta a uma dúvida.</p>
+    <ul>
+      <li><strong>Punição:</strong> /n indevido</li>
+      <li><strong>Ocorrência:</strong> Bloqueio do chat</li>
+    </ul>
+  </div>
+
+  <div class="regra">
+    <h2>5. Limite de respostas no /n</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Só é permitido haver 2 respostas para uma mesma dúvida postada no /n. Terceiro comentário permitido apenas se necessário para complementar informações.</p>
+    <ul>
+      <li><strong>Punição:</strong> /n indevido</li>
+      <li><strong>Ocorrência:</strong> Bloqueio do chat</li>
+    </ul>
+  </div>
+
+  <div class="regra">
+    <h2>6. Mensagem de alerta no /n</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Permitido enviar até 2 alertas sobre uma mesma mensagem indevida. Terceiro comentário será considerado indevido.</p>
+    <ul>
+      <li><strong>Punição:</strong> /n indevido</li>
+      <li><strong>Ocorrência:</strong> Bloqueio do chat</li>
+    </ul>
+  </div>
+
+  <div class="regra">
+    <h2>7. Proibição de anúncios em /v e /so</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>É proibido utilizar /v (vip) e /so (sócio) para anúncios de compra e venda. Devem usar /an, /ansocio ou repórteres para isso.</p>
+    <ul>
+      <li><strong>Punição:</strong> Comércio /v</li>
+      <li><strong>Ocorrência:</strong> Bloqueio do chat</li>
+    </ul>
+  </div>
+
+  <div class="regra">
+    <h2>8. Uso correto de /an e /ansocio</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Os comandos /an e /ansocio são exclusivos para compra e venda de itens permitidos no servidor, como acessórios, moedas, casas, empresas, recrutamento de fazendas ou famílias.</p>
+    <ul>
+      <li><strong>Punição:</strong> Anúncio indevido</li>
+      <li><strong>Ocorrência:</strong> Bloqueio do chat</li>
+    </ul>
+  </div>
+
+  <div class="regra">
+    <h2>9. Uso indevido de /an ou /ansocio</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Proibido enviar mensagens que não estejam relacionadas à venda de bens ou serviços permitidos.</p>
+    <ul>
+      <li><strong>Punição:</strong> /an ou /ansocio indevido</li>
+      <li><strong>Ocorrência:</strong> Bloqueio do chat</li>
+    </ul>
+  </div>
+
+  <div class="regra">
+    <h2>10. Uso indevido de /gov ou /ang</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Proibido utilizar /gov ou /ang para fins não relacionados ao papel da organização (piadas, provocações, xingamentos, indiretas).</p>
+    <ul>
+      <li><strong>Punição:</strong> /gov ou /ang indevido</li>
+      <li><strong>Ocorrência:</strong> Bloqueio do chat</li>
+    </ul>
+  </div>
+
+  <div class="regra">
+    <h2>11. Uso indevido de /anf</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>O comando /anf deve ser utilizado apenas para assuntos da família (recrutamento, eventos, vendas da família). É proibido divulgar produtos ou serviços de terceiros ou mensagens indevidas.</p>
+    <ul>
+      <li><strong>Punição:</strong> /anf indevido</li>
+      <li><strong>Ocorrência:</strong> Bloqueio do chat</li>
+    </ul>
+  </div>
+</div>
+   <div id="regras-lider" class="section active">
+  <div class="regra">
+    <h2>📋 REGRAS DE LÍDERES DE ORGANIZAÇÕES</h2>
+    <p>Atenção: Todas as regras abaixo se aplicam aos líderes de organizações. Infrações acarretarão punições e pontos de líder conforme descrito.</p>
+  </div>
+
+  <hr>
+
+  <div class="regra">
+    <h2>1. Autoridade de administradores superiores</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Administradores com cargos como Gerente, Diretor(a), Sub-dono ou Owner têm autoridade total para aplicar punições a líderes de organizações, mesmo que fora do padrão das punições gerais do servidor.</p>
+    <ul>
+      <li>Detalhes: Punições podem variar conforme julgamento, gravidade e necessidade, sempre com responsabilidade e bom senso.</li>
+    </ul>
+  </div>
+
+  <div class="regra">
+    <h2>2. Responsabilidade do líder sobre sua equipe</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>O líder de uma organização é responsável pela postura e comportamento dos membros, devendo garantir que sigam as regras do servidor.</p>
+    <ul>
+      <li>Detalhes: Líderes devem orientar, monitorar e aplicar medidas disciplinares internas quando necessário.</li>
+    </ul>
+  </div>
+
+  <div class="regra">
+    <h2>3. Aplicação de punições a membros infratores</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Membros que desrespeitam as regras e recebem denúncias formais devem ser punidos.</p>
+    <ul>
+      <li><strong>Punição:</strong> Não punição</li>
+      <li><strong>Ocorrência:</strong> 1 ponto caso o líder não aplique punição ao membro (rebaixamento ou demissão)</li>
+      <li>Observação: Punições devem ser proporcionais à gravidade da infração.</li>
+    </ul>
+  </div>
+
+  <div class="regra">
+    <h2>4. Teste de novos membros</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>É obrigatório realizar teste com cada candidato a ingressar na organização para garantir que compreenda as regras do servidor.</p>
+    <ul>
+      <li><strong>Punição:</strong> Abuso de comando</li>
+      <li><strong>Ocorrência:</strong> 3 pontos + 100 minutos no carandiru</li>
+      <li>Observação: Líder deve manter registros e fornecer provas (prints) do teste quando solicitado.</li>
+    </ul>
+  </div>
+
+  <div class="regra">
+    <h2>5. Acúmulo de pontos de advertência</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Líderes que não seguem as regras recebem pontos de advertência. Ao acumular 10 pontos, o líder perde automaticamente a posição.</p>
+    <ul>
+      <li><strong>Punição:</strong> Removido de líder</li>
+      <li><strong>Ocorrência:</strong> 200 minutos no carandiru</li>
+    </ul>
+  </div>
+
+  <div class="regra">
+    <h2>6. Ausência prolongada</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Líderes devem informar administradores sobre ausências prolongadas.</p>
+    <ul>
+      <li><strong>Punição:</strong> Removido de líder por inatividade</li>
+      <li><strong>Ocorrência:</strong> 200 minutos no carandiru</li>
+    </ul>
+  </div>
+
+  <div class="regra">
+    <h2>7. Níveis de recrutamento por organização</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Organizações SAMU, Repórter, Detran e Governo: nível máximo 4. Oficiais da Justiça: nível >5. Gangsters, Máfias, Terroristas e Mercenários: nível >7. Assassins e Hitmans: nível 10 ou superior.</p>
+    <ul>
+      <li><strong>Punição:</strong> Aplicação de ponto</li>
+      <li><strong>Ocorrência:</strong> 1 ponto de líder</li>
+    </ul>
+  </div>
+
+  <div class="regra">
+    <h2>8. Regras internas das organizações</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Líderes podem criar regras internas desde que não entrem em conflito com as regras gerais do servidor.</p>
+  </div>
+
+  <div class="regra">
+    <h2>9. Inclusão de sócios na blacklist</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Somente para membros que desrespeitam reiteradamente as regras da organização, com medidas corretivas prévias.</p>
+  </div>
+
+  <div class="regra">
+    <h2>10. Remoção de líder por inatividade</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>O responsável pela organização pode remover líderes inativos mediante evidências claras.</p>
+    <ul>
+      <li><strong>Punição:</strong> Removido de líder por inatividade</li>
+      <li><strong>Ocorrência:</strong> 200 minutos no carandiru</li>
+    </ul>
+  </div>
+
+  <div class="regra">
+    <h2>11. Atividade mínima diária</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Líderes devem cumprir pelo menos 3 horas de atividade diária durante o período no cargo, com exceções justificadas comunicadas previamente.</p>
+  </div>
+
+  <div class="regra">
+    <h2>12. Promoções justas</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Líderes não podem promover membros indevidamente para benefício próprio ou de terceiros.</p>
+    <ul>
+      <li><strong>Punição:</strong> Promoção indevida</li>
+      <li><strong>Ocorrência:</strong> 2 pontos de líder</li>
+    </ul>
+  </div>
+
+  <div class="regra">
+    <h2>13. Denúncias válidas ou punições in-game</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Receber denúncia válida ou punição in-game resulta em 3 pontos de líder automaticamente.</p>
+    <ul>
+      <li><strong>Punição:</strong> Denúncia UP</li>
+      <li><strong>Ocorrência:</strong> 3 pontos de líder</li>
+    </ul>
+  </div>
+
+  <div class="regra">
+    <h2>14. Sub-líderes em organizações neutras</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Líderes de organizações neutras podem nomear até dois sub-líderes simultaneamente.</p>
+    <ul>
+      <li><strong>Punição:</strong> Organização não neutra</li>
+      <li><strong>Ocorrência:</strong> 3 pontos de líder</li>
+    </ul>
+  </div>
+</div>
+
+    <div id="regras-familias" class="section active">
+  <div class="regra">
+    <h2>📋 REGRAS DE FAMÍLIAS</h2>
+    <p>Atenção: Todas as regras abaixo devem ser seguidas pelas famílias para manter a organização, o RPG e a integridade do servidor.</p>
+  </div>
+
+  <hr>
+
+  <div class="regra">
+    <h2>1. Distância mínima das sedes (HQs)</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>É proibido que sedes de famílias estejam a menos de 350 metros de qualquer território.</p>
+    <ul>
+      <li>Detalhes: Cada família tem direito a uma mudança de respawn por período de renovação. Para definir o local da sede, usar /familia spawn. Mudanças podem ocorrer caso territórios sejam reativados ou movidos. Sedes podem estar em casas de membros ou em sedes de organizações cujo líder seja membro da família.</li>
+      <li><strong>Punição:</strong> Conforme normas internas do servidor, de acordo com a gravidade.</li>
+      <li>Observação: Visa respeitar o espaço dos territórios e a dinâmica do jogo.</li>
+    </ul>
+  </div>
+
+  <div class="regra">
+    <h2>2. Invasões de sedes (HQs)</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Famílias podem realizar invasões em HQs de outras famílias seguindo critérios específicos.</p>
+    <ul>
+      <li>Detalhes: É necessário ter pelo menos cinco membros participando, incluindo o Fundador ou Sub-dono. Anunciar a invasão via /anf antes e após eliminar todos os membros da HQ rival. Membros mortos não podem sair da própria HQ nem retornar à sede invadida. Uma HQ só pode ser alvo de nova invasão após 1 hora da última ocorrência.</li>
+      <li><strong>Punição:</strong> Conforme normas internas do servidor, de acordo com a gravidade.</li>
+      <li>Observação: As invasões devem ser justas, organizadas e respeitar a integridade das famílias rivais.</li>
+    </ul>
+  </div>
+
+  <div class="regra">
+    <h2>3. Coerência de sobrenomes</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>É proibido convidar jogadores para uma família que não possuam o mesmo sobrenome.</p>
+    <ul>
+      <li>Detalhes: Violação pode resultar em penalidades como redução do período de validade ou remoção do ponto de respawn.</li>
+      <li><strong>Punição:</strong> Avaliada pela administração conforme a gravidade da infração.</li>
+      <li>Observação: Garante coerência e identidade visual da família no servidor.</li>
+    </ul>
+  </div>
+
+  <div class="regra">
+    <h2>4. Negociação e intervenção em sequestros</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Famílias com seis ou mais membros online podem negociar ou intervir em sequestros de membros da própria família.</p>
+    <ul>
+      <li>Detalhes: Necessário mínimo de seis membros online, incluindo fundador ou sub-dono. Deve ser usado /anf informando sobre o sequestro. Intervenção deve ser organizada, realista e não causar a morte do refém. Tentativas com menos membros ou sem aviso prévio são infração.</li>
+      <li><strong>Punição:</strong> Conforme normas internas do servidor, podendo incluir tempo no carandiru ou outras penalidades administrativas.</li>
+      <li>Observação: Mantém equilíbrio do sistema de sequestros e respeita o roleplay.</li>
+    </ul>
+  </div>
+</div>
+
+    <div id="regras-android" class="section active">
+  <div class="regra">
+    <h2>📋 REGRAS DE MOBILE / C-BUG / EXPLOITS</h2>
+    <p>Atenção: Jogadores em plataformas mobile devem seguir estas regras para garantir equilíbrio e justiça nos combates.</p>
+  </div>
+
+  <hr>
+
+  <div class="regra">
+    <h2>1. C-Bug Mobile</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Proibido jogadores mobile realizarem a técnica C-Bug, que envolve atirar e se esquivar rapidamente para obter vantagem injusta.</p>
+    <ul>
+      <li>Detalhes: Abuso próximo a veículos ou uso de datas modificadas para realizar C-Bug.</li>
+      <li><strong>Punição:</strong> C-Bug Mobile</li>
+      <li><strong>Ocorrência veterano:</strong> Advertência verbal</li>
+      <li><strong>Ocorrência recorrente:</strong> 100 minutos no carandiru</li>
+      <li>Observação: Garante igualdade nos combates entre plataformas.</li>
+    </ul>
+  </div>
+
+  <div class="regra">
+    <h2>2. Bug TAB (Android)</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Proibido jogadores Android abusarem do bug de abrir/fechar inventário (TAB) para reparar veículos ou descongelar.</p>
+    <ul>
+      <li><strong>Punição:</strong> Bug TAB</li>
+      <li><strong>Ocorrência veterano:</strong> Advertência verbal</li>
+      <li><strong>Ocorrência recorrente:</strong> 100 minutos no carandiru</li>
+      <li>Observação: Mantém o equilíbrio entre jogadores.</li>
+    </ul>
+  </div>
+
+  <div class="regra">
+    <h2>3. Slide Mobile (Android)</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Proibido realizar o bug Slide, cortando animação de correr durante o combate.</p>
+    <ul>
+      <li>Detalhes: Ocorre ao trocar de arma, fazendo a skin deslizar indevidamente.</li>
+      <li><strong>Punição:</strong> Slide Mobile</li>
+      <li><strong>Ocorrência veterano:</strong> Advertência verbal</li>
+      <li><strong>Ocorrência recorrente:</strong> 100 minutos no carandiru</li>
+      <li>Observação: Garante igualdade no movimento durante combate.</li>
+    </ul>
+  </div>
+
+  <div class="regra">
+    <h2>4. Lock On Sniper (Android)</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Proibido usar Lock On com sniper ou datas modificadas que ofereçam vantagem.</p>
+    <ul>
+      <li>Detalhes: Inclui baixar mods que ativem Lock On ou ofereçam vantagem visual/mecânica.</li>
+      <li><strong>Punição:</strong> Lock On Sniper</li>
+      <li><strong>Ocorrência novato:</strong> Advertência verbal</li>
+      <li><strong>Ocorrência veterano:</strong> 200 minutos no carandiru + 1 aviso na conta</li>
+      <li>Observação: Impede uso de recursos externos que alterem o jogo.</li>
+    </ul>
+  </div>
+
+  <div class="regra">
+    <h2>5. Sniper com Movimento (CLEO)</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Proibido usar CLEO ou mods que permitam movimentar-se enquanto mira com sniper.</p>
+    <ul>
+      <li><strong>Punição:</strong> Sniper com Movimento (CLEO)</li>
+      <li><strong>Ocorrência novato:</strong> Advertência verbal</li>
+      <li><strong>Ocorrência veterano:</strong> 200 minutos no carandiru + 1 aviso na conta</li>
+      <li>Observação: Considerado trapaça e vantagem injusta.</li>
+    </ul>
+  </div>
+
+  <div class="regra">
+    <h2>6. Uso de Mod/Hack Mobile</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Proibido usar aplicativos externos que alterem a jogabilidade no mobile, como cheats, aimbot ou mods que ofereçam vantagem.</p>
+    <ul>
+      <li><strong>Punição:</strong> Banimento permanente</li>
+      <li>Observação: Mods que interferem no combate não são tolerados.</li>
+    </ul>
+  </div>
+
+  <div class="regra">
+    <h2>7. Abuso de animação</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Proibido abusar de bugs de animação para esquivar-se de balas, via troca rápida de armas ou comandos simultâneos.</p>
+    <ul>
+      <li><strong>Punição:</strong> Abuso de animação</li>
+      <li><strong>Ocorrência veterano:</strong> 100 minutos no carandiru</li>
+      <li><strong>Ocorrência novato:</strong> 60 minutos no carandiru</li>
+      <li>Observação: Considerado anti-RPG e prejudicial ao combate justo.</li>
+    </ul>
+  </div>
+
+  <div class="regra">
+    <h2>8. HUD indevido</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Proibido utilizar HUDs que forneçam informações extras como radar de inimigos, auto-hp ou precisão de tiro.</p>
+    <ul>
+      <li><strong>Punição:</strong> HUD indevido</li>
+      <li><strong>Ocorrência:</strong> 200 minutos no carandiru + 1 aviso</li>
+      <li>Observação: HUDs devem se limitar a ajustes visuais.</li>
+    </ul>
+  </div>
+
+  <div class="regra">
+    <h2>9. Glitch visual indevido</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Jogadores mobile devem evitar usar glitches visuais para se esconder ou atravessar objetos.</p>
+    <ul>
+      <li><strong>Punição:</strong> Glitch visual indevido</li>
+      <li><strong>Ocorrência:</strong> 60 minutos no carandiru</li>
+      <li>Observação: Esconder-se dentro de objetos ou usar bugs de colisão é contra as regras.</li>
+    </ul>
+  </div>
+</div>
+
+  <div id="regras-objetos" class="section active">
+  <div class="regra">
+    <h2>📋 REGRAS DE PORTÕES, GRAFITES E OBJETOS</h2>
+    <p>Atenção: Jogadores devem respeitar o espaço público e privado ao posicionar portões, objetos ou grafites no servidor.</p>
+  </div>
+
+  <hr>
+
+  <div class="regra">
+    <h2>1. Portões/objetos/grafites indevidos</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Proibido colocar portões/objetos/grafites bloqueando acesso ou passagem de outros jogadores, especialmente em locais públicos.</p>
+    <ul>
+      <li>Detalhes: Apenas membros da mesma família podem colocar na HQ; líderes de organizações controlam a HQ da organização.</li>
+      <li><strong>Punição:</strong> Portão indevido</li>
+      <li><strong>Ocorrência:</strong> 60 minutos no carandiru + remoção do portão/objeto/grafite</li>
+      <li>Observação: Garante acessibilidade e evita práticas antijogo.</li>
+    </ul>
+  </div>
+
+  <div class="regra">
+    <h2>2. Mensagens ofensivas em grafites</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Proibido colocar mensagens ofensivas nos grafites.</p>
+    <ul>
+      <li><strong>Punição:</strong> Grafite indevido</li>
+      <li><strong>Ocorrência:</strong> Remoção do grafite</li>
+      <li>Observação: Evita disseminação de ódio e mantém o ambiente justo.</li>
+    </ul>
+  </div>
+
+  <div class="regra">
+    <h2>3. Grafites fora das paredes</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Grafites devem ser colocados diretamente em paredes.</p>
+    <ul>
+      <li><strong>Punição:</strong> Grafite indevido</li>
+      <li><strong>Ocorrência:</strong> 60 minutos no carandiru + remoção do grafite</li>
+      <li>Observação: Mantém estética e evita grafites flutuando no mapa.</li>
+    </ul>
+  </div>
+
+  <div class="regra">
+    <h2>4. Inatividade do proprietário</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Objetos poderão ser removidos se o proprietário estiver inativo por 2 meses.</p>
+    <ul>
+      <li>Detalhes: Proprietário pode solicitar devolução caso volte a jogar.</li>
+      <li>Observação: Garante acessibilidade e evita problemas de desempenho.</li>
+    </ul>
+  </div>
+
+  <div class="regra">
+    <h2>5. Objetos flutuantes ou desajustados</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Proibido usar objetos que violem a física do jogo.</p>
+    <ul>
+      <li><strong>Punição:</strong> Objeto indevido</li>
+      <li><strong>Ocorrência:</strong> Remoção do objeto</li>
+      <li>Observação: Promove realismo e imersão no ambiente.</li>
+    </ul>
+  </div>
+
+  <div class="regra">
+    <h2>6. Abuso de objetos para vantagens</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Proibido usar objetos para criar áreas inacessíveis ou locais de vantagem desleal.</p>
+    <ul>
+      <li><strong>Punição:</strong> Abuso de objeto</li>
+      <li><strong>Ocorrência:</strong> 100 minutos no carandiru + remoção do objeto</li>
+      <li>Observação: Mantém equilíbrio e competitividade justa.</li>
+    </ul>
+  </div>
+
+  <div class="regra">
+    <h2>7. Objetos/grafites em propriedades alheias</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Proibido posicionar dentro de propriedades sem autorização do dono.</p>
+    <ul>
+      <li><strong>Punição:</strong> Grafite/objeto indevido</li>
+      <li><strong>Ocorrência:</strong> 100 minutos no carandiru + remoção imediata</li>
+      <li>Observação: Preserva o direito de personalização dos espaços privados.</li>
+    </ul>
+  </div>
+
+  <div class="regra">
+    <h2>8. Remoção obrigatória de itens de propriedades desfeitas</h2>
+	<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+    <p>Portões, grafites e objetos devem ser removidos se propriedades, famílias ou organizações forem desfeitas, vendidas ou abandonadas.</p>
+    <ul>
+      <li>Detalhes: Remoção em até 48 horas, após isso a administração pode intervir.</li>
+      <li><strong>Punição:</strong> Abandono de objeto/grafite/portão</li>
+      <li><strong>Ocorrência:</strong> 100 minutos no carandiru + remoção forçada</li>
+      <li>Observação: Evita acúmulo de objetos e confusão visual no mapa.</li>
+    </ul>
+  </div>
+</div>
+
+ 
+
+
+<!-- Seções de Regras -->
+
+  <div id="orgaos-assalto" class="section active">
+  <div class="orgaos-assalto">
+
+    <!-- 01. Procedimentos e condições -->
+   <div class="regra">
+<h2>1. Procedimentos e condições para realizar um assalto</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p><strong>Condições:</strong></p>
+<ul>
+  <li>Pelo menos 2 membros da mesma organização.</li>
+  <li>Voz de assalto com /eu ou /voz.</li>
+</ul>
+<p><strong>Restrições:</strong></p>
+<ul>
+  <li>Não assaltar jogadores de nível 5 fora de organização.</li>
+  <li>Proibido durante situações de combate.</li>
+  <li>Proibido em áreas neutras (prefeitura, penitenciária, spawn civil, arena de duelos, caixinha premium, concessionária, HQs, territórios, fazendas).</li>
+  <li>Proibido assaltar jogadores sem estarem de /hi (exceto android).</li>
+</ul>
+<strong>Punição: Assalto indevido</strong>
+<ul>
+  <li>Ocorrência veterano: 100 minutos no carandiru</li>
+  <li>Ocorrência novato: 60 minutos no carandiru</li>
+</ul>
+<em>Observação:</em> Garante assaltos justos e em conformidade com as normas do servidor.
+</div>
+<hr>
+
+<div class="regra">
+<h2>2. Rendição obrigatória se sozinho e confrontado por 2 ou mais assaltantes</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p><strong>Detalhes:</strong></p>
+<ul>
+  <li>Se em veículo, pode tentar fugir até quebrar; depois rendição obrigatória.</li>
+  <li>Proibido reparar veículo destruído pelos assaltantes.</li>
+  <li>Jetpack: rendição obrigatória no chão; permitido voando.</li>
+  <li>Proibido pegar jetpack após voz de assalto.</li>
+  <li>Se a vítima estiver a pé, não é necessário mirar para que rendição seja válida.</li>
+</ul>
+<strong>Punição: Ant-RPG</strong>
+<ul>
+  <li>Ocorrência veterano: 200 minutos no carandiru + aviso</li>
+  <li>Ocorrência novato: 100 minutos no carandiru</li>
+</ul>
+<em>Observação:</em> Mantém interações justas e seguras entre vítimas e assaltantes.
+</div>
+<hr>
+
+<div class="regra">
+<h2>3. Só é permitido atirar no veículo após voz de assalto</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p><strong>Detalhes:</strong> Voz de assalto (/eu ou /voz) deve preceder qualquer ação violenta, incluindo disparos no veículo da vítima.</p>
+<strong>Punição: Deathmatch (DM)</strong>
+<ul>
+  <li>Ocorrência veterano: 150 minutos no carandiru</li>
+  <li>Ocorrência novato: 60 minutos no carandiru</li>
+</ul>
+<em>Observação:</em> Garante oportunidade justa para a vítima compreender a situação e se render.
+</div>
+<hr>
+
+<div class="regra">
+<h2>4. Proibido matar a vítima após aceitar o assalto</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p><strong>Detalhes:</strong> Aceitação do assalto implica submissão às demandas; a vida do personagem deve ser poupada.</p>
+<strong>Punição: Deathmatch (DM)</strong>
+<ul>
+  <li>Ocorrência veterano: 150 minutos no carandiru</li>
+  <li>Ocorrência novato: 60 minutos no carandiru</li>
+</ul>
+<em>Observação:</em> Promove ambiente justo e respeitoso, mesmo em contextos de conflito.
+</div>
+<hr>
+
+<div class="regra">
+<h2>5. Intervalo entre assaltos na mesma vítima</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p><strong>Detalhes:</strong> Mesma vítima não pode ser assaltada novamente pela mesma organização por 2 horas, garantindo diversidade e evitando abusos.</p>
+<strong>Punição: Assalto indevido</strong>
+<ul>
+  <li>Ocorrência veterano: 100 minutos no carandiru</li>
+  <li>Ocorrência novato: 60 minutos no carandiru</li>
+</ul>
+<em>Observação:</em> Administração incentiva respeitar o intervalo e buscar diferentes alvos.
+</div>
+<hr>
+
+<div class="regra">
+<h2>6. Proibido usar comandos de /servico para facilitar assaltos</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p><strong>Detalhes:</strong> Comandos como /servico policia ou /servico medico devem ser usados para fins legítimos; usá-los para atrair ou emboscar jogadores constitui violação.</p>
+<strong>Punição: Assalto indevido</strong>
+<ul>
+  <li>Ocorrência veterano: 100 minutos no carandiru</li>
+  <li>Ocorrência novato: 60 minutos no carandiru</li>
+</ul>
+<em>Observação:</em> Jogadores devem usar comandos de serviço de forma responsável e conforme as normas.
+</div>
+</div>
+</div>
+
+<div id="orgaos-sequestro" class="section">
+  <div class="orgaos-sequestro">
+      <!-- 01. Procedimentos e condições -->
+<div class="regra">
+<h2>1. Procedimentos e condições para realizar um sequestro</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p><strong>Condições:</strong></p>
+<ul>
+  <li>Um carro de 4 portas.</li>
+  <li>Pelo menos 3 membros da mesma organização.</li>
+  <li>Voz de sequestro com /eu ou /voz.</li>
+</ul>
+<p><strong>Restrições:</strong></p>
+<ul>
+  <li>Apenas carros são permitidos.</li>
+  <li>Não sequestrar jogadores de nível 2 e 3 fora de organização.</li>
+  <li>Proibido durante situações de combate.</li>
+  <li>Sequestros proibidos em áreas neutras (prefeitura, penitenciária, spawn civil, arena de duelos, caixinha premium, concessionária, HQs, territórios, fazendas).</li>
+</ul>
+<strong>Punição: Sequestro indevido</strong>
+<ul>
+  <li>Ocorrência veterano: 100 minutos no carandiru</li>
+  <li>Ocorrência novato: 60 minutos no carandiru</li>
+</ul>
+<em>Observação:</em> Garante sequestros justos e em conformidade com as normas do servidor.
+</div>
+<hr>
+
+<div class="regra">
+<h2>2. Rendição obrigatória quando jogador sozinho</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p><strong>Condições:</strong></p>
+<ul>
+  <li>Se jogador estiver em veículo, pode tentar fugir até quebrar.</li>
+  <li>Proibido usar comandos para reparar veículo danificado pelos sequestradores.</li>
+  <li>Jetpack: rendição obrigatória se usado no chão; permitido se voando.</li>
+  <li>Proibido pegar jetpack após receber voz de sequestro.</li>
+</ul>
+<strong>Punição:</strong> Aplicada conforme a administração avaliar a gravidade.
+<em>Observação:</em> Mantém fair play e integridade do sequestro.
+</div>
+<hr>
+
+<div class="regra">
+<h2>3. Atirar no veículo apenas após voz de sequestro</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p><strong>Detalhes:</strong> O comando de voz (/eu ou /voz) deve preceder o uso de armas contra o veículo da vítima.</p>
+<strong>Punição:</strong> Avaliada pela administração.
+<em>Observação:</em> Garante aviso prévio e justiça no sequestro.
+</div>
+<hr>
+
+<div class="regra">
+<h2>4. Uso do comando /sequestrar</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p><strong>Detalhes:</strong></p>
+<ul>
+  <li>Após vítima entrar no carro, usar /sequestrar.</li>
+  <li>Vítima não pode se comunicar via chat durante o sequestro.</li>
+  <li>Não é permitido atirar ou agredir exceto para execução final.</li>
+</ul>
+<strong>Punição: Falar durante o sequestro</strong>
+<ul>
+  <li>Ocorrência veterano: 100 minutos no carandiru</li>
+  <li>Ocorrência novato: 60 minutos no carandiru</li>
+</ul>
+<em>Observação:</em> Garante organização e respeito às normas.
+</div>
+<hr>
+
+<div class="regra">
+<h2>5. Veículo quebrado obriga liberação do refém</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p><strong>Detalhes:</strong> Se veículo quebrar e não houver reparo disponível, liberação imediata do refém de forma segura.</p>
+<em>Observação:</em> Responsabilidade dos sequestradores.
+</div>
+<hr>
+
+<div class="regra">
+<h2>6. Vítima não reagir ou fugir</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p><strong>Detalhes:</strong> Exceto durante troca de tiros no final de negociação.</p>
+<em>Observação:</em> Garantir desenrolar adequado do sequestro.
+</div>
+<hr>
+
+<div class="regra">
+<h2>7. Refém deve ser levado para cativeiro designado</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p><strong>Detalhes:</strong></p>
+<ul>
+  <li>Enviar /ang com nome da organização, ID do refém e valor do resgate.</li>
+  <li>Limite de 5 minutos para levar refém e enviar /ang.</li>
+  <li>Proibido ao refém sair da organização para alterar valor.</li>
+</ul>
+<em>Observação:</em> Garante organização e cumprimento do tempo.
+</div>
+<hr>
+
+<div class="regra">
+<h2>8. Proibido matar refém após chegada dos negociadores</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p><strong>Detalhes:</strong> Uso de /su ou tiroteio pelos negociadores é exceção; polícia deve tentar negociação primeiro.</p>
+<em>Observação:</em> Prioriza integridade e negociação justa.
+</div>
+<hr>
+
+<div class="regra">
+<h2>9. Apenas organizações policiais ou inimigas podem impedir sequestro</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p><strong>Detalhes:</strong></p>
+<ul>
+  <li>Não atirar diretamente no veículo.</li>
+  <li>Usar bloqueios ou barreiras para parar veículo.</li>
+  <li>Não interferir de forma desonesta se refém já estiver na jaula.</li>
+  <li>Exceção: refém membro da própria organização rival.</li>
+</ul>
+<strong>Punição: Engajar sequestro indevidamente</strong>
+<ul>
+  <li>Ocorrência veterano: 100 minutos no carandiru</li>
+  <li>Ocorrência novato: 60 minutos no carandiru</li>
+</ul>
+<em>Observação:</em> Intervenções devem ser estratégicas e seguras.
+</div>
+<hr>
+
+<div class="regra">
+<h2>10. Polícia deve ter pelo menos 3 membros para intervir</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p><strong>Detalhes:</strong> Para pagamento e negociação, não há mínimo. Um membro C4 pode enviar /gov.</p>
+<strong>Punição: Engajar sequestro indevidamente</strong>
+<ul>
+  <li>Ocorrência veterano: 100 minutos no carandiru</li>
+  <li>Ocorrência novato: 60 minutos no carandiru</li>
+</ul>
+<em>Observação:</em> Intervenção policial coordenada e realista.
+</div>
+<hr>
+
+<div class="regra">
+<h2>11. Intervenção de família ou organização do sequestrado</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p><strong>Detalhes:</strong> Mínimo de 6 membros, incluindo líder ou sub-líder; membros podem ser de organizações distintas.</p>
+<strong>Punição: Engajar sequestro indevidamente</strong>
+<ul>
+  <li>Ocorrência veterano: 100 minutos no carandiru</li>
+  <li>Ocorrência novato: 60 minutos no carandiru</li>
+</ul>
+<em>Observação:</em> Intervenções devem ser planejadas e organizadas.
+</div>
+<hr>
+
+<div class="regra">
+<h2>12. Proibido matar refém ou negociadores após pagamento</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<strong>Punição: DM</strong>
+<ul>
+  <li>Ocorrência veterano: 150 minutos no carandiru</li>
+  <li>Ocorrência novato: 60 minutos no carandiru</li>
+</ul>
+<em>Observação:</em> Garante segurança e confiança nas negociações.
+</div>
+<hr>
+
+<div class="regra">
+<h2>13. Mesma vítima não pode ser sequestrada pela mesma organização por 2 horas</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<strong>Punição: Sequestro indevido</strong>
+<ul>
+  <li>Ocorrência veterano: 100 minutos no carandiru</li>
+  <li>Ocorrência novato: 60 minutos no carandiru</li>
+</ul>
+<em>Observação:</em> Evita abusos e garante diversidade de alvos.
+</div>
+<hr>
+
+<div class="regra">
+<h2>14. Proibido usar comandos /servico para facilitar sequestros</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<strong>Punição: Sequestro indevido</strong>
+<ul>
+  <li>Ocorrência veterano: 100 minutos no carandiru</li>
+  <li>Ocorrência novato: 60 minutos no carandiru</li>
+</ul>
+<em>Observação:</em> Comandos de serviço devem ser usados de forma adequada.
+</div>
+<hr>
+
+<div class="regra">
+<h2>15. Valores máximos de resgate por categoria</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<ul>
+  <li>SAMU/Detran/Repórteres: R$150.000</li>
+  <li>Civil: R$60.000</li>
+  <li>Hitmans/Assassins: R$100.000</li>
+  <li>Gang/Máfia/Mercenários: R$100.000</li>
+  <li>Policiais, Governo e Terroristas: R$300.000</li>
+  <li>Líder: R$500.000</li>
+  <li>Sub-líder: R$250.000</li>
+  <li>Governador e Prefeito: R$1.000.000</li>
+</ul>
+<strong>Punição: Sequestro indevido</strong>
+<ul>
+  <li>Ocorrência veterano: 100 minutos no carandiru</li>
+  <li>Ocorrência novato: 60 minutos no carandiru</li>
+</ul>
+<em>Observação:</em> Administração monitora para cumprimento dos limites.
+</div>
+<hr>
+
+<div class="regra">
+<h2>16. Proibido sequestrar quem se apresenta para pagar resgate</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<strong>Punição: Sequestro indevido</strong>
+<ul>
+  <li>Ocorrência veterano: 100 minutos no carandiru</li>
+  <li>Ocorrência novato: 60 minutos no carandiru</li>
+</ul>
+<em>Observação:</em> Evita conflitos e garante negociações seguras.
+</div>
+<hr>
+
+<div class="regra">
+<h2>17. Proibido retornar ao local do sequestro após morte</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<strong>Punição: DM</strong>
+<ul>
+  <li>Ocorrência veterano: 150 minutos no carandiru</li>
+  <li>Ocorrência novato: 60 minutos no carandiru</li>
+</ul>
+<em>Observação:</em> Garante coerência e justiça no sequestro.
+</div>
+<hr>
+
+<div class="regra">
+<h2>18. Sempre manter um sequestrador com o refém</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<strong>Punição: ANT-JOGO</strong>
+<ul>
+  <li>Ocorrência veterano: 150 minutos no carandiru</li>
+  <li>Ocorrência novato: 60 minutos no carandiru</li>
+</ul>
+<em>Observação:</em> Assegura integridade e negociações justas.
+</div>
+<hr>
+
+<div class="regra">
+<h2>19. Proibido usar veículos de inventário para continuar sequestro</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<strong>Punição: Sequestro indevido</strong>
+<ul>
+  <li>Ocorrência veterano: 100 minutos no carandiru</li>
+  <li>Ocorrência novato: 60 minutos no carandiru</li>
+</ul>
+<em>Observação:</em> Planejar ações com veículos adequados desde o início.
+</div>
+<hr>
+
+<div class="regra">
+<h2>20. Execução de refém somente após 7 minutos do primeiro /ang</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<strong>Punição: Sequestro indevido</strong>
+<ul>
+  <li>Ocorrência veterano: 100 minutos no carandiru</li>
+  <li>Ocorrência novato: 60 minutos no carandiru</li>
+</ul>
+<em>Observação:</em> Tempo garante negociação justa.
+</div>
+<hr>
+
+<div class="regra">
+<h2>21. Jogador deve se render ao entrar em território inimigo</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<strong>Punição: ANT-RPG</strong>
+<ul>
+  <li>Ocorrência veterano: 200 minutos no carandiru + aviso</li>
+  <li>Ocorrência novato: 100 minutos no carandiru</li>
+</ul>
+<em>Observação:</em> Jogadores devem respeitar controle de territórios.
+</div>
+</div>
+</div>
+
+<div id="orgaos-terroristas" class="section">
+  <div class="orgaos-terroristas">
+      <!-- 01. Procedimentos e condições -->
+  <div class="regra">
+<h2>1. Proibição de veículos de guerra nas cidades</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p>Proibido o uso de veículos de guerra, incluindo Hydra, Rhino e Hunter, dentro dos limites das cidades de Los Santos, Las Venturas e San Fierro.</p>
+
+<strong>Detalhes:</strong>
+<p>Veículos de guerra são considerados excessivamente poderosos para o ambiente urbano e seu uso pode desequilibrar as dinâmicas do jogo.</p>
+
+<strong>Punição: Veículo de guerra na cidade</strong>
+<ul>
+  <li>Ocorrência veterano: 100 minutos no carandiru</li>
+  <li>Ocorrência novato: 30 minutos no carandiru</li>
+</ul>
+
+<em>Observação:</em> Espera-se que os jogadores respeitem o ambiente urbano e utilizem veículos adequados.
+</div>
+<hr>
+
+<div class="regra">
+<h2>2. Autorização para iniciar guerras</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p>Organizações terroristas e o Exército estão autorizados a iniciar guerras.</p>
+
+<strong>Detalhes:</strong>
+<p>Para iniciar uma guerra, é necessário um mínimo de seis membros, incluindo líder ou sub-líder. Caso a organização esteja na frente no placar, não é permitido fugir do confronto ou se esconder dentro da HQ para evitar uma virada.</p>
+
+<strong>Punição: Guerra indevida</strong>
+<ul>
+  <li>Ocorrência veterano: 100 minutos no carandiru</li>
+  <li>Ocorrência novato: 30 minutos no carandiru</li>
+</ul>
+
+<em>Observação:</em> Garante que guerras sejam conduzidas de forma justa e competitiva, evitando estratégias anti-jogo.
+</div>
+<hr>
+
+<div class="regra">
+<h2>3. Invasões em sedes (HQs) rivais</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p>Organizações terroristas e o Exército podem realizar invasões em sedes (HQs) rivais.</p>
+
+<strong>Detalhes:</strong>
+<ul>
+  <li>Ter pelo menos cinco membros, incluindo líder ou sub-líder.</li>
+  <li>Fazer anúncio prévio utilizando o comando /ang.</li>
+  <li>Após eliminar todos da HQ rival, enviar /ang informando sucesso e realizar retirada imediata.</li>
+  <li>Membros mortos durante a invasão não podem retornar à HQ invadida.</li>
+  <li>Respeitar intervalo de uma hora entre invasões à mesma HQ.</li>
+</ul>
+
+<strong>Punição:</strong>
+<p>Será aplicada conforme as normativas internas do servidor e de acordo com a gravidade da infração.</p>
+
+<em>Observação:</em> Garante invasões justas, organizadas e respeitando a dinâmica do servidor.
+</div>
+<hr>
+
+<div class="regra">
+<h2>4. Invasões por contrato</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p>Organizações terroristas podem realizar invasões por contrato, consistindo em invadir qualquer sede (HQ) a pedido de outro jogador.</p>
+
+<strong>Detalhes:</strong>
+<ul>
+  <li>Necessário ter pelo menos quatro membros, incluindo líder ou sub-líder.</li>
+  <li>Duração máxima da invasão: 30 minutos.</li>
+  <li>Permitido retornar após a morte.</li>
+  <li>Em invasões a sedes policiais, permitido aplicar /su invasão.</li>
+  <li>Permitido uso de veículos de guerra.</li>
+  <li>Valor mínimo da invasão: 1 milhão (comprovado por print).</li>
+  <li>Obrigatório realizar dois anúncios (/ang) antes da invasão e outro iniciando-a.</li>
+</ul>
+
+<strong>Punição:</strong>
+<p>Será aplicada conforme as normativas internas do servidor e de acordo com a gravidade da infração.</p>
+
+<em>Observação:</em> Garante que invasões por contrato ocorram de forma clara, transparente e equilibrada.
+</div>
+<hr>
+
+<div class="regra">
+<h2>5. Realização de atentados</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p>Organizações terroristas estão autorizadas a realizar atentados.</p>
+
+<strong>Detalhes:</strong>
+<ul>
+  <li>Atentado deve ocorrer em local fixo e previamente anunciado.</li>
+  <li>Proibida a ajuda de mercenários.</li>
+  <li>Atentados não podem ocorrer em áreas neutras ou durante blitz policiais.</li>
+  <li>Proibido atacar pessoas fora da área do atentado.</li>
+  <li>Apenas o Exército pode combater atentados.</li>
+  <li>Na ausência do Exército, qualquer organização policial com pelo menos 4 membros (incluindo líder ou sub-líder) pode intervir.</li>
+  <li>Apenas uma organização policial pode intervir por vez.</li>
+  <li>Obrigatório uso do /gov para anunciar intervenção.</li>
+</ul>
+
+<strong>Punição:</strong>
+<p>Será aplicada conforme as normativas internas do servidor e de acordo com a gravidade da infração.</p>
+
+<em>Observação:</em> As diretrizes garantem que atentados sejam planejados, contidos e respeitem o roleplay e áreas protegidas.
+</div>
+<hr>
+
+<div class="regra">
+<h2>6. Uso de comandos explosivos (/homembomba, /carrobomba, /cb)</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p>Os comandos /homembomba, /carrobomba e /cb só podem ser utilizados em situações específicas, como atentados e invasões por contrato.</p>
+
+<strong>Detalhes:</strong>
+<p>O uso desses comandos fora das situações permitidas será considerado indevido.</p>
+
+<strong>Punição: /carrobomba ou /homembomba indevido</strong>
+<ul>
+  <li>Ocorrência veterano: 100 minutos no carandiru</li>
+  <li>Ocorrência novato: 60 minutos no carandiru</li>
+</ul>
+
+<em>Observação:</em> Mantém equilíbrio do jogo e uso coerente de comandos poderosos dentro do contexto apropriado.
+</div>
+</div>
+</div>
+
+ <div id="orgaos-assasinas" class="section">
+  <div class="orgaos-assasinas">
+        <!-- 01 -->
+<div class="regra">
+<h2>1. Proibição de auxílio entre assassinos</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p>Proibido um assassino ajudar outro na execução de seu contrato, especificamente atirando no alvo do contrato de outro assassino.</p>
+
+<strong>Detalhes:</strong>
+<p>Cada assassino deve cumprir seus contratos de forma independente, sem auxílio direto de outros assassinos na eliminação dos alvos.</p>
+
+<strong>Punição:</strong>
+<p>Será aplicada conforme as normativas internas do servidor e de acordo com a gravidade da infração.</p>
+
+<em>Observação:</em> Preserva a autonomia da profissão de assassino, garantindo que os contratos sejam cumpridos individualmente.
+</div>
+<hr>
+
+<div class="regra">
+<h2>2. Cumprimento de contratos contra policiais</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p>É permitido, em contratos contra policiais, que o assassino elimine o alvo se receber voz de prisão e estiver enfrentando três ou mais jogadores, sendo um deles o alvo. Deve se render imediatamente após, caso ainda haja desvantagem numérica.</p>
+
+<strong>Detalhes:</strong>
+<p>Se um assassino sob contrato receber voz de prisão ou sequestro e estiver contra três ou mais oponentes, poderá eliminar o alvo. Após isso, é obrigatória a rendição, caso ainda haja desvantagem numérica.</p>
+
+<strong>Punição:</strong>
+<p>Será aplicada conforme as normativas internas do servidor e de acordo com a gravidade da infração.</p>
+
+<em>Observação:</em> Equilibra o cumprimento do contrato com o respeito às situações de voz de prisão ou sequestro, mantendo o realismo e o fair-play.
+</div>
+<hr>
+
+<div class="regra">
+<h2>3. Permissão de invasão para cumprimento de contratos</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p>É permitido invadir qualquer local para cumprir um contrato, com exceção de eventos organizados pela administração do servidor.</p>
+
+<strong>Detalhes:</strong>
+<p>Assassinos e mercenários podem entrar em locais diversos para executar seus contratos, desde que não se trate de eventos especiais administrados pela equipe do servidor.</p>
+
+<strong>Punição:</strong>
+<p>Será aplicada conforme as normativas internas do servidor e de acordo com a gravidade da infração.</p>
+
+<em>Observação:</em> Garante liberdade operacional, respeitando eventos oficiais.
+</div>
+<hr>
+
+<div class="regra">
+<h2>4. Confidencialidade do contratante</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p>Proibido divulgar a identidade da pessoa que contratou um assassino para realizar um contrato.</p>
+
+<strong>Detalhes:</strong>
+<p>A confidencialidade é essencial na execução de contratos. Revelar a identidade do contratante ou aceitar ser adicionado a um contrato viola a função sigilosa.</p>
+
+<strong>Punição: ANT-JOGO</strong>
+<ul>
+  <li>Ocorrência veterano: 150 minutos no carandiru</li>
+  <li>Ocorrência novato: 60 minutos no carandiru</li>
+</ul>
+
+<em>Observação:</em> Mantém o sigilo e a integridade do sistema de contratos.
+</div>
+<hr>
+
+<div class="regra">
+<h2>5. Proibição de matar reféns ou sequestradores antes do término do sequestro</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p>Proibido matar o refém ou os sequestradores envolvidos em um sequestro antes da conclusão do mesmo.</p>
+
+<strong>Detalhes:</strong>
+<p>Nenhuma das partes deve ser morta até que o processo seja oficialmente encerrado.</p>
+
+<strong>Punição: Contrato em sequestro</strong>
+<ul>
+  <li>Ocorrência veterano: 100 minutos no carandiru</li>
+  <li>Ocorrência novato: 60 minutos no carandiru</li>
+</ul>
+
+<em>Observação:</em> Garante que sequestros ocorram de forma coerente com o roleplay.
+</div>
+<hr>
+
+<div class="regra">
+<h2>6. Proibição de informar ao alvo que ele é um contrato</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p>Proibido informar ao alvo que ele é um contrato.</p>
+
+<strong>Detalhes:</strong>
+<p>Assassinos não devem revelar ao jogador que ele está sob contrato por mensagem, voz, /me ou qualquer outro meio.</p>
+
+<strong>Punição: ANT-JOGO</strong>
+<ul>
+  <li>Ocorrência veterano: 150 minutos no carandiru</li>
+  <li>Ocorrência novato: 60 minutos no carandiru</li>
+</ul>
+
+<em>Observação:</em> Preserva o elemento surpresa e a integridade da profissão.
+</div>
+<hr>
+
+<div class="regra">
+<h2>7. Proibição de cumprir contratos em jogadores atendidos por administração</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p>Proibido cumprir contratos em jogadores que estejam sendo atendidos por membros da administração.</p>
+
+<strong>Detalhes:</strong>
+<p>Assassinos estão proibidos de eliminar alvos em atendimento com a staff (/relatório, /ajuda ou outros canais oficiais). Jogadores em atendimento devem ser considerados fora de combate até o encerramento da situação.</p>
+
+<strong>Punição: ANT-JOGO</strong>
+<ul>
+  <li>Ocorrência veterano: 200 minutos no carandiru</li>
+  <li>Ocorrência novato: 60 minutos no carandiru</li>
+</ul>
+
+<em>Observação:</em> Protege a integridade dos atendimentos administrativos e garante que contratos sejam cumpridos apenas quando o alvo estiver disponível.
+</div>
+</div>
+</div>
+
+<div id="orgaos-criminosas" class="section">
+  <div class="orgaos-criminosas">
+
+    <!-- 01 -->
+<div class="regra">
+<h2>1. Pontos de tráfico autorizados</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p>Gângsters estão autorizados a estabelecer pontos de tráfico, desde que anunciem o local utilizando o comando /ang e tenham a presença de pelo menos dois membros da gangue.</p>
+
+<strong>Restrição:</strong>
+<ul>
+  <li>É expressamente proibido realizar pontos de tráfico em áreas consideradas neutras.</li>
+</ul>
+
+<strong>Punição:</strong>
+<p>As punições serão determinadas de acordo com as normativas internas do servidor, podendo variar conforme a gravidade do descumprimento.</p>
+
+<em>Observação:</em> Esta regra permite atividades de gangsters dentro de um contexto controlado, respeitando áreas seguras ou neutras.
+</div>
+<hr>
+
+<div class="regra">
+<h2>2. Invasão de HQs rivais</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p>Gangsters, mafiosos, mercenários e assassinos podem realizar invasões em sedes (HQs) rivais.</p>
+
+<strong>Procedimentos e restrições:</strong>
+<ul>
+  <li>Presença mínima de cinco membros, incluindo líder ou sub-líder.</li>
+  <li>Fazer anúncio prévio da invasão 5 minutos antes com o comando /ang 3 vezes.</li>
+  <li>Após eliminar todos os membros da HQ rival, enviar /ang anunciando sucesso e retirada imediata.</li>
+  <li>Membros que morrerem não podem sair da própria HQ nem retornar à HQ invadida.</li>
+  <li>Sócios que entrarem após o /ang de início não podem participar.</li>
+  <li>Mesma HQ só pode ser invadida novamente após uma hora da invasão anterior.</li>
+  <li>Não é permitido entrar no interior da organização invadida.</li>
+</ul>
+
+<strong>Punição:</strong>
+<p>As punições serão determinadas conforme as normativas internas do servidor.</p>
+
+<em>Observação:</em> As atividades devem respeitar áreas designadas como seguras ou neutras, mantendo o jogo equilibrado.
+</div>
+<hr>
+
+<div class="regra">
+<h2>3. Contratação de mercenários</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p>Organizações criminosas podem contratar mercenários para ajudar em territórios, invasões, emboscadas e sequestros, se estiverem com 50% menos membros que a organização rival.</p>
+
+<strong>Exemplo:</strong>
+<p>Se a Groove Street tem 5 membros e os Aztecas têm 10, a Groove Street pode contratar a organização mercenária Sons para assistência.</p>
+
+<strong>Punição:</strong>
+<p>É proibido para mercenários auxiliarem terroristas em invasões por contrato e em atentados.</p>
+
+<em>Observação:</em> A regra equilibra forças entre organizações rivais permitindo compensação numérica com mercenários.
+</div>
+<hr>
+
+<div class="regra">
+<h2>4. Proibição de agressão a civis e profissionais</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p>Proibido atirar ou agredir civis, mecânicos, médicos e repórteres que entram em territórios controlados por organizações criminosas.</p>
+
+<strong>Permissões específicas:</strong>
+<ul>
+  <li>Guinchar veículos.</li>
+  <li>Prestar atendimento médico.</li>
+  <li>Anunciar algo relacionado ao trabalho.</li>
+  <li>Consumir produtos oferecidos no território (ex: drogas, armas).</li>
+</ul>
+
+<em>Observação:</em> Garantir a segurança de profissionais e civis que entram com propósitos legítimos. Violação pode resultar em punições conforme regras do servidor.
+</div>
+<hr>
+
+<div class="regra">
+<h2>5. Proibição de atirar em policiais de fora do território</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p>Proibido atirar em policiais que estejam dentro de um território em operação a partir de uma posição fora do território.</p>
+
+<strong>Detalhes:</strong>
+<ul>
+  <li>Assegura confrontos justos dentro dos princípios do fair play.</li>
+  <li>Evita ações desonestas e desequilibradas em confrontos com a polícia.</li>
+</ul>
+
+<strong>Punição:</strong>
+<p>As punições serão determinadas conforme as normativas do servidor, podendo incluir advertências ou medidas disciplinares.</p>
+
+<em>Observação:</em> Confrontos devem ocorrer de acordo com princípios de fair play.
+</div>
+<hr>
+
+<div class="regra">
+<h2>6. Venda obrigatória de produtos anunciados</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p>Proibido negar-se a vender produtos previamente anunciados no comando /ang.</p>
+
+<strong>Detalhes:</strong>
+<ul>
+  <li>Organizações comprometem-se a concretizar a venda dos produtos anunciados.</li>
+  <li>Negar a venda após anúncio público é considerado antijogo e desonesto.</li>
+</ul>
+
+<strong>Punição:</strong>
+<p>Violação da regra de venda<br>
+Ocorrência veterano: 60 minutos no carandiru<br>
+Ocorrência novato: 30 minutos no carandiru</p>
+
+<em>Observação:</em> Garantir coerência entre anúncios e ações, assegurando integridade do comércio no servidor.
+</div>
+</div>
+</div>
+
+<div id="orgaos-emboscada" class="section">
+  <div class="orgaos-emboscada">
+
+    <!-- 01 -->
+<div class="regra">
+<h2>1. Participação mínima em emboscadas</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p>Para realizar uma emboscada, é necessário contar com a participação de pelo menos 5 membros da organização, incluindo obrigatoriamente o líder ou sub-líder.</p>
+
+<strong>Detalhes:</strong>
+<ul>
+  <li>Assegura que as ações de emboscada sejam organizadas</li>
+  <li>Exige mínimo de planejamento e liderança</li>
+  <li>Garante efetividade e responsabilidade nas operações</li>
+</ul>
+
+<strong>Punição:</strong>
+<p>Emboscada indevida<br>
+Ocorrência veterano: 100 minutos no carandiru<br>
+Ocorrência novato: 60 minutos no carandiru</p>
+
+<em>Observação:</em> As organizações devem planejar suas emboscadas com cuidado, respeitando as regras e promovendo um ambiente de jogo justo e equilibrado.
+</div>
+<hr>
+
+<div class="regra">
+<h2>2. Proibição de emboscadas em HQs</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p>Emboscadas não são permitidas dentro ou nas proximidades de HQs. Todas devem ser realizadas nas ruas da cidade, longe dessas áreas.</p>
+
+<strong>Detalhes:</strong>
+<ul>
+  <li>Evitar locais próximos a qualquer HQ</li>
+  <li>Se a zona de confronto incluir território de gangue, penalidades podem ser aplicadas</li>
+</ul>
+
+<strong>Punição:</strong>
+<p>Emboscada indevida<br>
+Ocorrência veterano: 100 minutos no carandiru<br>
+Ocorrência novato: 60 minutos no carandiru</p>
+
+<em>Observação:</em> As organizações devem planejar estratégias de emboscada considerando a localização para manter integridade e legalidade das operações.
+</div>
+<hr>
+
+<div class="regra">
+<h2>3. Proibição de /su em jogadores em emboscada</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p>É expressamente proibido às organizações policiais aplicarem o comando /su em jogadores participando de emboscadas.</p>
+
+<strong>Detalhes:</strong>
+<ul>
+  <li>Evita penalização indevida de jogadores em confronto direto</li>
+  <li>Reconhece emboscadas como parte da dinâmica entre organizações criminosas e forças de segurança</li>
+</ul>
+
+<strong>Punição:</strong>
+<p>/su indevido<br>
+Ocorrência veterano: 60 minutos no carandiru<br>
+Ocorrência novato: 30 minutos no carandiru</p>
+
+<em>Observação:</em> Forças policiais devem respeitar o contexto das emboscadas, aplicando regras de forma justa e equilibrada.
+</div>
+<hr>
+
+<div class="regra">
+<h2>4. Proibição de disparos durante emboscadas</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p>Durante uma emboscada, é proibido realizar disparos de dentro para fora ou de fora para dentro do local da emboscada.</p>
+
+<strong>Detalhes:</strong>
+<ul>
+  <li>Garante segurança e fair play durante emboscadas</li>
+  <li>Evita vantagens desproporcionais em combates</li>
+</ul>
+
+<strong>Punição:</strong>
+<p>Deathmatch (DM)<br>
+Ocorrência veterano: 150 minutos no carandiru<br>
+Ocorrência novato: 60 minutos no carandiru</p>
+
+<em>Observação:</em> Todas as partes envolvidas devem respeitar esta diretriz, mantendo integridade e respeito mútuo durante as emboscadas.
+</div>
+</div>
+</div>
+
+
+
+<div id="orgaos-reporters" class="section">
+  <div class="orgaos-reporters">
+
+<div class="regra">
+<h2>1. Tempo máximo de entrevista</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p>O tempo máximo permitido para a realização de uma entrevista é de 15 minutos.</p>
+
+<strong>Detalhes:</strong>
+<ul>
+  <li>Garantir eficiência e respeito durante entrevistas</li>
+  <li>Evitar consumo excessivo de tempo dos envolvidos</li>
+  <li>Manter a fluidez e organização do servidor</li>
+</ul>
+
+<strong>Punição:</strong>
+<p>Exceder tempo de entrevista<br>
+Ocorrência veterano: 60 minutos no carandiru<br>
+Ocorrência novato: 30 minutos no carandiru</p>
+
+<em>Observação:</em> Entrevistadores e entrevistados devem monitorar o tempo para evitar ultrapassar o limite.
+</div>
+<hr>
+
+<div class="regra">
+<h2>2. Procedimentos e condutas em entrevistas</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p>Regras de conduta para entrevistas.</p>
+
+<strong>Detalhes:</strong>
+<ul>
+  <li>Tempo máximo de entrevista: 15 minutos</li>
+  <li>Proibido comportamentos de troll (falar abobrinhas ou desviar foco)</li>
+  <li>Proibido falar mal de organizações, jogadores ou administradores</li>
+  <li>Manter tom respeitoso e profissional</li>
+</ul>
+
+<strong>Punição:</strong>
+<p>Entrevista indevida<br>
+Ocorrência veterano: 60 minutos no carandiru<br>
+Ocorrência novato: 60 minutos no carandiru</p>
+
+<em>Observação:</em> Entrevistadores e entrevistados devem seguir estas diretrizes para garantir ordem, respeito e qualidade da interação.
+</div>
+<hr>
+
+<div class="regra">
+<h2>3. Uso correto do comando /no</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p>Proibido mentir, ofender ou falar mal de alguém através do comando /no (notícias/boatos).</p>
+
+<strong>Detalhes:</strong>
+<ul>
+  <li>/no deve ser usado para compartilhar informações verídicas e relevantes</li>
+  <li>Proibido difamar, desinformar ou ofender jogadores, organizações ou administradores</li>
+</ul>
+
+<strong>Punição:</strong>
+<p>/no indevido<br>
+Ocorrência veterano: 60 minutos no carandiru<br>
+Ocorrência novato: 30 minutos no carandiru</p>
+
+<em>Observação:</em> Jogadores devem utilizar o /no com responsabilidade, mantendo respeito e integridade nas comunicações.
+</div>
+<hr>
+
+<div class="regra">
+<h2>4. Uso adequado dos comandos /no e /aovivo</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p>Proibido usar /no ou /aovivo para fins que não correspondam à finalidade original.</p>
+
+<strong>Detalhes:</strong>
+<ul>
+  <li>/no deve ser usado apenas para divulgação de notícias</li>
+  <li>Proibido anunciar vendas pessoais via /no</li>
+  <li>Para vendas pessoais, usar /ansocio, /marketplace ou outro repórter</li>
+</ul>
+
+<strong>Punição:</strong>
+<p>/no indevido<br>
+Ocorrência veterano: 60 minutos no carandiru<br>
+Ocorrência novato: 30 minutos no carandiru</p>
+
+<em>Observação:</em> Jogadores devem usar comandos de forma responsável e adequada, mantendo qualidade e confiabilidade da informação.
+</div>
+</div>
+</div>
+
+
+
+<div id="orgaos-govermentais" class="section">
+  <div class="orgaos-govermentais">
+
+    <!-- 01 -->
+ <div class="regra">
+<h2>1. Revistar jogadores</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p>Proibido revistar jogadores sem aplicar voz de revista (/hi) e sem que o jogador esteja agachado com mãos na cabeça.</p>
+
+<strong>Condições:</strong>
+<ul>
+  <li>Não realizar revista sozinho ou sem /hi do jogador</li>
+  <li>Em áreas neutras, permitido revistar sozinho</li>
+  <li>Líder de organização governamental pode revistar sozinho se necessário</li>
+  <li>Membros da GATE podem revistar sozinhos em frente a locais de roubo (exceto caixas eletrônicos e fazendas)</li>
+  <li>Proibido revistar membros do governo ou médicos</li>
+</ul>
+
+<strong>Punição:</strong>
+<p>Ocorrência veterano: 60 minutos no carandiru<br>
+Ocorrência novato: Advertência verbal</p>
+
+<em>Observação:</em> Garantir integridade e direitos dos jogadores, mantendo o RP realista.
+</div>
+<hr>
+
+<div class="regra">
+<h2>2. Procedimento de voz e /su em procurados</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p>Obrigatório aplicar comando megafone (/m) antes de usar (/su) ou disparar.</p>
+
+<strong>Condições:</strong>
+<ul>
+  <li>Aguardar 15 segundos após voz antes de /su DOP ou disparos</li>
+  <li>Não aplicar /su DOP após usar /vdp</li>
+  <li>Se suspeito atirar, reagir imediatamente</li>
+  <li>Em combate ou veículo x veículo, dispensa espera</li>
+  <li>/su TH ou H dispensa voz</li>
+  <li>Proibido /su em jogadores ESC</li>
+  <li>Reaplicação de /su somente após 5 minutos</li>
+</ul>
+
+<strong>Punição:</strong>
+<p>Ocorrência veterano: 100 minutos no carandiru<br>
+Ocorrência novato: 60 minutos no carandiru</p>
+
+<em>Observação:</em> Garante chance de rendição e equilíbrio no RP.
+</div>
+<hr>
+
+<div class="regra">
+<h2>3. Regras para invasão de território ou HQ</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p>Proibido invadir territórios ou HQs com menos de 3 oficiais.</p>
+
+<strong>Condições:</strong>
+<ul>
+  <li>Permitido abaixo de 3 se houver perseguição ativa</li>
+  <li>Permitido abaixo de 3 entre 00h00 e 10h00</li>
+  <li>Dentro de território, só aplicar /su H, TH e cúmplice</li>
+  <li>Durante operações, proibido usar /su dentro de território</li>
+  <li>Só invadir se houver procurados dentro</li>
+  <li>GATE pode invadir em dupla em qualquer horário</li>
+</ul>
+
+<strong>Punição:</strong>
+<p>Ocorrência veterano: 60 minutos no carandiru<br>
+Ocorrência novato: Advertência verbal</p>
+
+<em>Observação:</em> Mantém equilíbrio e evita abuso em zonas de facções.
+</div>
+<hr>
+
+<div class="regra">
+<h2>4. Operações de blitz</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p>Permitido realizar blitz contra tráfico com mínimo de 4 oficiais e 1 líder/sub-líder.</p>
+
+<strong>Condições:</strong>
+<ul>
+  <li>Proibido fazer em HQ, território ou área neutra</li>
+  <li>Não precisa anunciar em /gov</li>
+</ul>
+
+<strong>Punição:</strong>
+<p>Não aplicável</p>
+
+<em>Observação:</em> Operação estratégica sem prejudicar fluxo do servidor.
+</div>
+<hr>
+
+<div class="regra">
+<h2>5. Operações em territórios criminosos</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p>Permitidas com mínimo de 6 oficiais, incluindo líder/sub-líder.</p>
+
+<strong>Condições:</strong>
+<ul>
+  <li>Anunciar início e fim via /gov</li>
+  <li>Permitido /su TH se criminosos atirarem de fora do território</li>
+  <li>Proibido atirar de fora para dentro sem voz e procura</li>
+</ul>
+
+<strong>Punição:</strong>
+<p>Conforme regras gerais do servidor</p>
+
+<em>Observação:</em> Respeitar conduta policial e RP da facção.
+</div>
+<hr>
+
+<div class="regra">
+<h2>6. Intervenções em bocas de fumo</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p>Permitido intervir em bocas anunciadas por criminosos.</p>
+
+<strong>Condições:</strong>
+<ul>
+  <li>Obrigatório anunciar via /gov</li>
+  <li>Necessário mínimo de 6 oficiais e 1 líder/sub-líder</li>
+</ul>
+
+<strong>Punição:</strong>
+<p>Conforme normas internas</p>
+
+<em>Observação:</em> Objetivo é combate ao tráfico com operação organizada.
+</div>
+<hr>
+
+<div class="regra">
+<h2>7. Regras para procurados nível 10+</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p>Não é obrigatório aceitar rendição de procurados nível 10+, salvo algemado.</p>
+
+<strong>Condições:</strong>
+<ul>
+  <li>Se algemado, deve aceitar rendição</li>
+  <li>Permite reação do procurado em 3x1 ou mais</li>
+</ul>
+
+<strong>Punição:</strong>
+<p>Conforme normas internas</p>
+
+<em>Observação:</em> Mantém realismo e dificuldade para criminosos de alto nível.
+</div>
+<hr>
+
+<div class="regra">
+<h2>8. Algemar sem /hd</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p>É permitido algemar suspeitos sem usar /hd, desde que não estejam fugindo ou reagindo.</p>
+
+<strong>Condições:</strong>
+<ul>
+  <li>Suspeito deve estar parado ou demonstrar cooperação</li>
+  <li>Não utilizar sem necessidade ou em fuga ativa</li>
+  <li>Utilizar bom senso e justificar ação se necessário</li>
+</ul>
+
+<strong>Punição:</strong>
+<p>Conforme normas internas do servidor</p>
+
+<em>Observação:</em> Medida visa agilizar abordagem em situações seguras, sem abuso.
+</div>
+<hr>
+
+<div class="regra">
+<h2>9. Uso de Hunter e Hydra</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p>Exército só pode usar Hunter e Hydra para abater aeronaves pilotadas por procurados.</p>
+
+<strong>Condições:</strong>
+<ul>
+  <li>Proibido usar contra veículos terrestres</li>
+  <li>Apenas para aeronaves com piloto procurado</li>
+  <li>Uso deve ser proporcional e justificado</li>
+</ul>
+
+<strong>Punição:</strong>
+<p>Variável conforme gravidade; pode incluir advertência, punição ou banimento</p>
+
+<em>Observação:</em> Respeitar realismo militar e evitar abuso de poder.
+</div>
+<hr>
+
+<div class="regra">
+<h2>10. Aplicação de multas</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p>Proibido multar jogadores nível 2 ou 3 sem organização e mecânicos em serviço.</p>
+
+<strong>Condições:</strong>
+<ul>
+  <li>Não multar iniciantes (nível 2 e 3)</li>
+  <li>Não multar mecânicos em atendimento</li>
+  <li>Necessário prova caso o mecânico não esteja atendendo ninguém</li>
+  <li>Lista de multas permitidas segue regras oficiais</li>
+</ul>
+
+<strong>Punição:</strong>
+<p>Veterano: 60 minutos carandiru<br>
+Novato: Advertência verbal</p>
+
+<em>Observação:</em> Protege novatos e serviços essenciais.
+</div>
+<hr>
+
+<div class="regra">
+<h2>11. Custódia de preso</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p>Proibido assumir preso que já está sob custódia de outro policial.</p>
+
+<strong>Condições:</strong>
+<ul>
+  <li>Somente assumir custódia com permissão</li>
+  <li>Evita conflito de operação e bagunça no procedimento</li>
+</ul>
+
+<strong>Punição:</strong>
+<p>Veterano: 60 minutos carandiru<br>
+Novato: Advertência verbal</p>
+
+<em>Observação:</em> Promove organização e respeito entre equipes policiais.
+</div>
+<hr>
+
+<div class="regra">
+<h2>12. Voz sozinho contra 3 ou mais procurados</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p>Proibido policial dar voz de prisão sozinho contra 3+ procurados.</p>
+
+<strong>Condições:</strong>
+<ul>
+  <li>Regra protege o policial e mantém realismo do RP</li>
+  <li>Necessário apoio para abordagem múltipla</li>
+</ul>
+
+<strong>Punição:</strong>
+<p>Veterano: 100 minutos carandiru<br>
+Novato: Advertência verbal</p>
+
+<em>Observação:</em> Segurança e coerência no combate criminal são prioridade.
+</div>
+<hr>
+
+<div class="regra">
+<h2>13. Intervenção em atentados terroristas</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p>O Exército tem prioridade para intervir e controlar atentados terroristas.</p>
+
+<strong>Condições:</strong>
+<ul>
+  <li>Deve anunciar ação via /gov antes da intervenção</li>
+  <li>Mínimo de 3 membros do Exército online</li>
+  <li>Se não houver membros suficientes, outra organização governamental assume</li>
+</ul>
+
+<strong>Punição:</strong>
+<p>Conforme normas internas, variável de acordo com gravidade</p>
+
+<em>Observação:</em> Garantir rápida e eficaz intervenção em situações extremas.
+</div>
+<hr>
+
+<div class="regra">
+<h2>14. Uso de /prego, /bq, /br e /cone</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p>Comandos permitidos apenas em operações, blitz ou para impedir fuga de procurados.</p>
+
+<strong>Condições:</strong>
+<ul>
+  <li>Uso proporcional à situação</li>
+  <li>Evitar prejudicar injustamente outros jogadores</li>
+  <li>Oficiais devem estar treinados no uso correto</li>
+</ul>
+
+<strong>Punição:</strong>
+<p>Veterano: 30 minutos carandiru<br>
+Novato: Advertência verbal</p>
+
+<em>Observação:</em> Garante eficácia da ação policial sem abuso de poder.
+</div>
+<hr>
+
+<div class="regra">
+<h2>15. Aplicação de (/su) conforme os tipos de crimes</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<ul>
+<li>Proibido aplicar /su PIA em seguranças, membros do governo, motoristas de carro forte ou jogadores portando arma fora do carro (H).</li>
+<li>Proibido aplicar /su PIA em armas brancas.</li>
+<li>Proibido aplicar /su PIA dentro da casa do jogador.</li>
+<li>Proibido aplicar /su PIA em lojas de armas, exceto se estiverem sendo roubadas.</li>
+<li>Aplicar /su invasão apenas após voz (/m) e recusa do invasor.</li>
+<li>Aplicar /su se suspeito descartar drogas, materiais, dinamite ou similares.</li>
+<li>Aplicar /su drogas se estiver plantando/colhendo maconha ou for dono da plantação.</li>
+<li>Aplicar /su por roubo a jogadores auxiliando o ladrão.</li>
+<li>Lista de crimes: /su TH, Invasão, DOP, Desacato, Dinamite, Vandalismo, Racha, Fuga, Ameaça, Sequestro, Atentado, Materiais, Cúmplice, Tráfico, Agressão, Homicídio, Trote, Roubo, Ajuste, Drogas, PIA, AVP, Suborno, RP, Decod, Cellhack.</li>
+</ul>
+
+<strong>Punição:</strong>
+<ul>
+<li>Ocorrência veterano: 60 minutos no carandiru</li>
+<li>Ocorrência novato: 30 minutos no carandiru</li>
+</ul>
+
+<em>Observação:</em> Punições aplicadas de acordo com normas internas do servidor.
+</div>
+<hr>
+
+<div class="regra">
+<h2>16. Uso de disfarce</h2>
+<img src="https://i.imgur.com/7BxI811.png" alt="Ícone" style="width:50px; float:right; margin-left:10px;">
+<p>Polícia Civil pode usar disfarce para rondas de revista, mas não para perseguir procurados.</p>
+
+<strong>Condições:</strong>
+<ul>
+  <li>Proibido evitar ou intervir em roubos disfarçado</li>
+  <li>Não entrar em territórios de organizações criminosas</li>
+  <li>Permitido tentar adquirir drogas e aplicar /su drogas se criminoso tentar vender</li>
+</ul>
+
+<strong>Punição:</strong>
+<p>Veterano: 60 minutos carandiru<br>
+Novato: 30 minutos carandiru</p>
+
+<em>Observação:</em> Uso estratégico respeitando limitações legais e objetivos da Polícia Civil.
+</div>
+<hr>
+
+<div class="regra">
+<h2>17. Rendição de procurados nível 10+</h2>
+<img src="https://i.imgur.com/7BxI811.png" style="width:50px; float:right; margin-left:10px;">
+<p>Não é obrigatório aceitar rendição de procurados nível 10+, exceto algemado.</p>
+
+<strong>Condições:</strong>
+<ul>
+<li>Se algemado, rendição deve ser aceita</li>
+<li>Procurado pode reagir em desvantagem 3x1</li>
+</ul>
+
+<strong>Punição:</strong>
+<ul>
+<li>Conforme normas internas</li>
+</ul>
+
+<em>Observação:</em> Equilibra perseguições e combate a criminosos perigosos.
+</div>
+<hr>
+
+
+
+ 
+<!-- Outras abas -->
+<div class="tab-content" id="content-organizacoes"><h1>🏴 Organizações</h1></div>
+<div class="tab-content" id="content-economia"><h1>💰 Economia</h1></div>
+<div class="tab-content" id="content-policia"><h1>🚓 Assalto</h1></div>
+<div class="tab-content" id="content-outros"><h1>📄 Regras de Assalto</h1></div>
+
+
+
+<!-- Script -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const mainTabs = document.querySelectorAll(".tab");
+  const dropdownTab = document.getElementById("tab-regras-gerais");
+  const tabContents = {
+    "bem-vindo": document.getElementById("content-bem-vindo"),
+    "regras-gerais": document.getElementById("content-regras-gerais"),
+    "organizacoes": document.getElementById("content-organizacoes"),
+    "economia": document.getElementById("content-economia"),
+    "policia": document.getElementById("content-policia"),
+    "outros": document.getElementById("content-outros")
+  };
+  
+  const dropdownLinks = document.querySelectorAll(".dropdown-content a");
+  const dropdownSections = document.querySelectorAll(".section");
+
+  const deactivateAllTabs = () => {
+    mainTabs.forEach(t => t.classList.remove("active"));
+    dropdownTab.classList.remove("active");
+    Object.values(tabContents).forEach(c => c.classList.remove("active"));
+    dropdownSections.forEach(s => s.classList.remove("active"));
+  };
+
+  mainTabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      deactivateAllTabs();
+      tab.classList.add("active");
+      const target = tab.dataset.tab;
+      if (tabContents[target]) tabContents[target].classList.add("active");
+    });
+  });
+
+  dropdownLinks.forEach(link => {
+    link.addEventListener("click", e => {
+      e.preventDefault();
+      deactivateAllTabs();
+      dropdownTab.classList.add("active");
+      tabContents["regras-gerais"].classList.add("active");
+      const targetSection = document.getElementById(link.dataset.target);
+      if (targetSection) targetSection.classList.add("active");
+    });
+  });
+});
+</script>
